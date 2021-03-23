@@ -10,10 +10,11 @@ import React, { useMemo } from "react";
 import HeaderBar from "./components/HeaderBar";
 import ProfileCard from "./components/profile/ProfileCard";
 import "./App.scss";
-import Timeline from "./components/timeline/Timeline";
+import TimelineOverview from "./components/timeline/Timeline";
 import Skills from "./components/skills/Skills";
 import InterestOverview from "./components/interests/InterestOverview";
 import ProjectOverview from "./components/projects/ProjectOverview";
+import Certificates from "./components/certificates/Certificates";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -34,8 +35,9 @@ export default function App() {
       <HeaderBar />
       <Container className="main-content">
         <ProfileCard />
+        <Certificates />
         <Skills />
-        <Timeline />
+        <TimelineOverview />
         <ProjectOverview />
         <InterestOverview />
       </Container>

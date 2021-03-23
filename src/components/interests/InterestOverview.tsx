@@ -6,7 +6,7 @@ import MovieIcon from "mdi-material-ui/Movie";
 import GamingIcon from "mdi-material-ui/GoogleController";
 import ShootingIcon from "mdi-material-ui/Pistol";
 import TravelIcon from "mdi-material-ui/Airplane";
-import MusicIcon from "mdi-material-ui/Music";
+import MotorbikeIcon from "mdi-material-ui/Motorbike";
 import SwimIcon from "mdi-material-ui/Swim";
 
 interface Interest {
@@ -37,8 +37,8 @@ export default function InterestOverview() {
       title: "Filme",
     },
     {
-      icon: <MusicIcon fontSize="large" />,
-      title: "Musik",
+      icon: <MotorbikeIcon fontSize="large" />,
+      title: "Motorradfahren",
     },
   ];
 

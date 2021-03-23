@@ -12,6 +12,7 @@ import MailIcon from "mdi-material-ui/EmailOutline";
 import WebsiteIcon from "mdi-material-ui/Earth";
 import PhoneIcon from "mdi-material-ui/PhoneOutline";
 import LocationIcon from "mdi-material-ui/MapMarkerOutline";
+import BabyIcon from "mdi-material-ui/BabyCarriage";
 
 export default function ProfileCard() {
   const profileInfoLines = [
@@ -34,6 +35,10 @@ export default function ProfileCard() {
       icon: <LocationIcon />,
       text: "Bergstraße 26, 63785 Obernburg, Germany",
     },
+    {
+      icon: <BabyIcon />,
+      text: "20.11.1995",
+    },
   ];
 
   return (
@@ -47,8 +52,10 @@ export default function ProfileCard() {
         />
 
         <CardContent>
-          <Typography variant="h4">Daniel Bretzigheimer</Typography>
-          <Typography variant="subtitle1">Frontend Developer</Typography>
+          <Box>
+            <Typography variant="h4">Daniel Bretzigheimer</Typography>
+            <Typography variant="subtitle1">Frontend Developer</Typography>
+          </Box>
           {profileInfoLines.map((pi, index) => {
             return (
               <Box display="flex" marginTop={1.5} key={index}>
