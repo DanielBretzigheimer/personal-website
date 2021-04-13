@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, Grid, Typography } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Link,
+  Typography,
+} from "@material-ui/core";
 import React, { ReactNode } from "react";
 import CategoryHeader from "../CategoryHeader";
 import HeartIcon from "mdi-material-ui/Heart";
@@ -50,14 +57,15 @@ export default function InterestOverview() {
       <Card>
         <CardContent>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            sagittis dignissim orci nec efficitur. Curabitur nunc nisl, tempus
-            eget faucibus posuere, pharetra sed enim. Aenean rhoncus tellus
-            neque, eu posuere nibh dictum in. Morbi non leo purus. Curabitur
-            tincidunt accumsan ex, sagittis sollicitudin nisl volutpat ut.
-            Integer tristique rhoncus augue, a volutpat purus rhoncus et. Nullam
-            vel accumsan orci, molestie egestas nisl. Fusce a odio vitae arcu
-            dapibus viverra.
+            Neben meinem Beruf als Software Entwickler bin ich in unserem{" "}
+            <Link href="https://www.sg-eisenbach1958.de" target="_blank">
+              Schützenverein
+            </Link>{" "}
+            als Jugendleiter und EDV Beauftragter tätig. In den Sommer Monaten
+            gehe ich nach der Arbeit gerne im Badeseen schwimmen. Sollte das
+            Wetter mal nicht passen bin ich auch großer Filmliebhaber oder
+            spiele auch mal gerne eine Runde am Computer. In meinem Urlaub Reise
+            und Erkunde ich gerne die Länder Europas.
           </Typography>
         </CardContent>
 

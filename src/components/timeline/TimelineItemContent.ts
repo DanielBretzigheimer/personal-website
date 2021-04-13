@@ -5,4 +5,6 @@ export default interface TimelineItemContent {
   caption?: string;
   content?: string | ReactNode;
   icon: ReactNode;
+  type: "Education" | "Private" | "Work";
+  keywords?: Array<string>;
 }
