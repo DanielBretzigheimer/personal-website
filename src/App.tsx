@@ -32,9 +32,9 @@ export default function App() {
       <CssBaseline />
       <Container className="main-content">
         <ProfileCard />
-        <Certificates />
         <Skills />
         <TimelineOverview />
+        <Certificates />
         <InterestOverview />
       </Container>
     </ThemeProvider>

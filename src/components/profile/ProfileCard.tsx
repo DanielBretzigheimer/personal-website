@@ -1,21 +1,32 @@
 import {
+  Avatar,
   Box,
   Card,
   CardContent,
-  CardMedia,
+  Divider,
+  Grid,
   InputLabel,
+  makeStyles,
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import ProfilePicture from "../../images/Profile_Picture.jpg";
 import { Link } from "@material-ui/core";
 import MailIcon from "mdi-material-ui/EmailOutline";
 import WebsiteIcon from "mdi-material-ui/Earth";
 import PhoneIcon from "mdi-material-ui/PhoneOutline";
 import LocationIcon from "mdi-material-ui/MapMarkerOutline";
 import BirthIcon from "mdi-material-ui/CalendarOutline";
+import ProfilePicture from "../../images/Profile_Picture.jpg";
+
+const useStyles = makeStyles((theme) => ({
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+}));
 
 export default function ProfileCard() {
+  const classes = useStyles();
   const profileInfoLines = [
     {
       label: "Mail",
@@ -26,7 +37,7 @@ export default function ProfileCard() {
     {
       label: "Website",
       icon: <WebsiteIcon />,
-      text: "bretzi.dev",
+      text: "https://daniel-bretzigheimer.dev",
       link: "https://daniel-bretzigheimer.netlify.app/",
     },
     {
@@ -50,36 +61,38 @@ export default function ProfileCard() {
   return (
     <>
       <Card>
-        <CardMedia
-          component="img"
-          style={{ height: "auto", display: "none" }}
-          image={ProfilePicture}
-          title="profile picture"
-        />
-
         <CardContent>
-          <Box>
-            <Typography variant="h4">Daniel Bretzigheimer</Typography>
-            <Typography variant="subtitle1">Frontend Developer</Typography>
+          <Box display="flex" alignItems="center">
+            <Avatar src={ProfilePicture} className={classes.large} />
+            <Box marginLeft={2}>
+              <Typography variant="h4">Daniel Bretzigheimer</Typography>
+              <Typography variant="subtitle1">Frontend Developer</Typography>
+            </Box>
           </Box>
-          {profileInfoLines.map((pi, index) => {
-            return (
-              <Box
-                display="flex"
-                marginTop={1.5}
-                key={index}
-                alignItems="flex-end"
-              >
-                {pi.icon}
-                <Box marginLeft={1.5}>
-                  <InputLabel shrink={true}>{pi.label}</InputLabel>
-                  <Typography>
-                    {pi.link ? <Link href={pi.link}>{pi.text}</Link> : pi.text}
-                  </Typography>
-                </Box>
-              </Box>
-            );
-          })}
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <Grid container>
+            {profileInfoLines.map((pi, index) => {
+              return (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Box display="flex" marginTop={1.5}>
+                    <Box marginTop="16px">{pi.icon}</Box>
+                    <Box marginLeft={1.5}>
+                      <InputLabel shrink={true}>{pi.label}</InputLabel>
+                      <Typography>
+                        {pi.link ? (
+                          <Link href={pi.link}>{pi.text}</Link>
+                        ) : (
+                          pi.text
+                        )}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              );
+            })}
+          </Grid>
         </CardContent>
       </Card>
     </>

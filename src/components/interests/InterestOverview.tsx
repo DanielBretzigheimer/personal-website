@@ -62,10 +62,10 @@ export default function InterestOverview() {
               Schützenverein
             </Link>{" "}
             als Jugendleiter und EDV Beauftragter tätig. In den Sommer Monaten
-            gehe ich nach der Arbeit gerne im Badeseen schwimmen. Sollte das
-            Wetter mal nicht passen bin ich auch großer Filmliebhaber oder
-            spiele auch mal gerne eine Runde am Computer. In meinem Urlaub Reise
-            und Erkunde ich gerne die Länder Europas.
+            gehe ich nach der Arbeit gerne im Badesee schwimmen. Sollte das
+            Wetter mal nicht passen, bin ich auch großer Filmliebhaber oder
+            spiele das ein oder andere Computerspiel. In meinem Urlaub Reise und
+            Erkunde ich gerne Europa.
           </Typography>
         </CardContent>
 

@@ -56,18 +56,22 @@ export default function Skills() {
             </Grid>
             <Grid item xs={12} md={6} xl={4}>
               <Box textAlign="center">
-                <Typography variant="h5">Betriebssysteme</Typography>
-              </Box>
-              <SkillLine skill="Microsoft Windows" value={90} />
-              <SkillLine skill="Linux (Ubuntu)" value={40} />
-            </Grid>
-            <Grid item xs={12} md={6} xl={4}>
-              <Box textAlign="center">
                 <Typography variant="h5">Sonstiges</Typography>
               </Box>
               <SkillLine skill="HTML" value={100} />
               <SkillLine skill="CSS" value={100} />
+              <SkillLine skill="SCSS" value={90} />
               <SkillLine skill="Razor (CSHTML)" value={90} />
+              <SkillLine skill="WPF" value={70} />
+            </Grid>
+            <Grid item xs={12} md={6} xl={4}>
+              <Box textAlign="center">
+                <Typography variant="h5">Betriebssysteme</Typography>
+              </Box>
+              <SkillLine skill="Microsoft Windows" value={90} />
+              <SkillLine skill="Android" value={60} />
+              <SkillLine skill="iOS" value={60} />
+              <SkillLine skill="Linux (Ubuntu)" value={40} />
             </Grid>
           </Grid>
         </CardContent>
