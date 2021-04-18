@@ -1,37 +1,14 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Chip,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Box, Card, CardContent, Chip, Typography } from "@material-ui/core";
 import React from "react";
-import TimelineItemContent from "./TimelineItemContent";
-
-const useStyle = makeStyles((theme) => ({
-  chipList: {
-    listStyle: "none",
-    display: "flex",
-    flexWrap: "wrap",
-    padding: 0,
-    marginLeft: theme.spacing(-0.5),
-    marginRight: theme.spacing(-0.5),
-  },
-  chip: {
-    marginLeft: theme.spacing(0.5),
-    marginRight: theme.spacing(0.5),
-    marginTop: theme.spacing(1),
-  },
-}));
+import TimelineItemContent from "../../model/TimelineItemContent";
+import ChipCollection from "../ChipCollection";
 
 interface TimelineCardProps {
   item: TimelineItemContent;
+  activeFilters: Array<string>;
 }
 
 export default function TimelineCard(props: TimelineCardProps) {
-  const classes = useStyle();
-
   function getContent() {
     if (typeof props.item.content === "string") {
       return (
@@ -48,17 +25,12 @@ export default function TimelineCard(props: TimelineCardProps) {
     const keywords = props.item.keywords;
     if (keywords) {
       return (
-        <Box component="ul" className={classes.chipList}>
-          {keywords.map((keyword) => (
-            <li key={keyword}>
-              <Chip
-                variant="outlined"
-                label={keyword}
-                className={classes.chip}
-              />
-            </li>
-          ))}
-        </Box>
+        <ChipCollection
+          chips={keywords.map((keyword) => {
+            const color = props.activeFilters.includes(keyword) ? "secondary" : "default";
+            return <Chip variant="outlined" color={color} label={keyword} />;
+          })}
+        />
       );
     }
 

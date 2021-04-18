@@ -62,13 +62,24 @@ export default function ProfileCard() {
     <>
       <Card>
         <CardContent>
-          <Box display="flex" alignItems="center">
+          <Box display="flex" flexDirection="row" alignItems="center">
             <Avatar src={ProfilePicture} className={classes.large} />
             <Box marginLeft={2}>
               <Typography variant="h4">Daniel Bretzigheimer</Typography>
               <Typography variant="subtitle1">Frontend Developer</Typography>
             </Box>
           </Box>
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <Typography>
+            Willkommen auf meiner persönlichen Webseite. Ich habe diese Seite aus 2 Gründen
+            erstellt. Einerseits wollte ich eine Testanwendung mit React erstellen, um mich mehr mit
+            der Technologie und ihren Möglichkeiten auseinanderzusetzen. Andererseits habe ich zu
+            dieser Zeit auch meine Bewerbungsunterlagen aktualisiert und habe die Situation genutzt
+            um hier meine allgemeinen Informationen und meinem Lebenslauf darzustellen. Zusätzlich
+            bietet mir die Seite die Möglichkeit meiner Kreativität freien Lauf zu lassen.
+          </Typography>
         </CardContent>
         <Divider />
         <CardContent>
@@ -81,11 +92,7 @@ export default function ProfileCard() {
                     <Box marginLeft={1.5}>
                       <InputLabel shrink={true}>{pi.label}</InputLabel>
                       <Typography>
-                        {pi.link ? (
-                          <Link href={pi.link}>{pi.text}</Link>
-                        ) : (
-                          pi.text
-                        )}
+                        {pi.link ? <Link href={pi.link}>{pi.text}</Link> : pi.text}
                       </Typography>
                     </Box>
                   </Box>

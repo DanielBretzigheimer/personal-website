@@ -1,16 +1,9 @@
-import {
-  Container,
-  createMuiTheme,
-  CssBaseline,
-  ThemeProvider,
-  useMediaQuery,
-} from "@material-ui/core";
-import { blue } from "@material-ui/core/colors";
+import { Container, createMuiTheme, CssBaseline, ThemeProvider, useMediaQuery } from "@material-ui/core";
+import { blue, pink } from "@material-ui/core/colors";
 import React, { useMemo } from "react";
 import ProfileCard from "./components/profile/ProfileCard";
 import "./App.scss";
-import TimelineOverview from "./components/timeline/Timeline";
-import Skills from "./components/skills/Skills";
+import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";
 
@@ -21,7 +14,8 @@ export default function App() {
       createMuiTheme({
         palette: {
           type: prefersDarkMode ? "dark" : "light",
-          primary: blue,
+          primary: prefersDarkMode ? { main: blue[200] } : { main: blue[500] },
+          secondary: prefersDarkMode ? { main: pink[200] } : { main: pink[500] },
         },
       }),
     [prefersDarkMode]
@@ -32,7 +26,6 @@ export default function App() {
       <CssBaseline />
       <Container className="main-content">
         <ProfileCard />
-        <Skills />
         <TimelineOverview />
         <Certificates />
         <InterestOverview />

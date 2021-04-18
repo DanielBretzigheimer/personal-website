@@ -1,13 +1,7 @@
 import { makeStyles } from "@material-ui/core";
-import {
-  Timeline,
-  TimelineConnector,
-  TimelineDot,
-  TimelineItem,
-  TimelineOppositeContent,
-  TimelineSeparator,
-} from "@material-ui/lab";
+import { Timeline, TimelineItem, TimelineOppositeContent } from "@material-ui/lab";
 import React from "react";
+import Seperator from "./Seperator";
 import TimelineCard from "./TimelineCard";
 import TimelineProps from "./TimelineProps";
 
@@ -31,12 +25,9 @@ export default function MobileTimeline(props: TimelineProps) {
         return (
           <TimelineItem key={index}>
             <TimelineOppositeContent className={classes.timelineContent}>
-              <TimelineCard item={item} />
+              <TimelineCard item={item} activeFilters={props.filters} />
             </TimelineOppositeContent>
-            <TimelineSeparator>
-              <TimelineDot color="primary">{item.icon}</TimelineDot>
-              {isLast ? <></> : <TimelineConnector />}
-            </TimelineSeparator>
+            <Seperator isLast={isLast} item={item} />
           </TimelineItem>
         );
       })}
