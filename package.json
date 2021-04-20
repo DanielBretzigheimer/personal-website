@@ -9,7 +9,6 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@types/node": "^14.14.34",
     "@types/react-dom": "^17.0.2",
-    "axios": "^0.19.0",
     "mdi-material-ui": "^6.22.0",
     "node-sass": "4.14.1",
     "react": "^16.8.6",

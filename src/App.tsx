@@ -1,4 +1,10 @@
-import { Container, createMuiTheme, CssBaseline, ThemeProvider, useMediaQuery } from "@material-ui/core";
+import {
+  Container,
+  createMuiTheme,
+  CssBaseline,
+  ThemeProvider,
+  useMediaQuery,
+} from "@material-ui/core";
 import { blue, pink } from "@material-ui/core/colors";
 import React, { useMemo } from "react";
 import ProfileCard from "./components/profile/ProfileCard";
@@ -6,6 +12,7 @@ import "./App.scss";
 import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";
+import Footer from "./components/footer/footer";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -29,6 +36,7 @@ export default function App() {
         <TimelineOverview />
         <Certificates />
         <InterestOverview />
+        <Footer />
       </Container>
     </ThemeProvider>
   );

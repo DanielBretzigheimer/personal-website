@@ -73,16 +73,24 @@ export default function ProfileCard() {
         <Divider />
         <CardContent>
           <Typography>
-            Willkommen auf meiner persönlichen Webseite. Ich habe diese Seite aus 2 Gründen
-            erstellt. Einerseits wollte ich eine Testanwendung mit React erstellen, um mich mehr mit
-            der Technologie und ihren Möglichkeiten auseinanderzusetzen. Andererseits habe ich zu
-            dieser Zeit auch meine Bewerbungsunterlagen aktualisiert und habe die Situation genutzt
-            um hier meine allgemeinen Informationen und meinem Lebenslauf darzustellen. Zusätzlich
-            bietet mir die Seite die Möglichkeit meiner Kreativität freien Lauf zu lassen.
+            Willkommen auf meiner Webseite. Hier möchte ich mich und meine Fähigkeiten vorstellen.
+            Zusätzlich soll die Seite als Beispiel Anwendung dienen, weshalb der Quellcode{" "}
+            <Link href="https://gitlab.com/dbretzigheimer95/personal-website">hier</Link> öffentlich
+            eingesehen werden kann.
           </Typography>
         </CardContent>
         <Divider />
         <CardContent>
+          <Typography variant="h5">Über mich</Typography>
+          <Typography>
+            Mein Name ist Daniel Bretzigheimer und ich bin Software Entwickler in der nähe von
+            Frankfurt am Main. Meine Leidenschaft ist die Frontend Entwicklung, allerdings habe ich
+            auch Erfahrung in der Backend Erstellung inklusive der Datenabfrage über eine Datenbank.
+          </Typography>
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <Typography variant="h5">Bio</Typography>
           <Grid container>
             {profileInfoLines.map((pi, index) => {
               return (

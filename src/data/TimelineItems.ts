@@ -26,25 +26,34 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Software zur Auswertung und Konfiguration von Garnreinigungsmaschinen mit Komunikation über eine BUS Schnittstelle.",
       type: "Work",
-      keywords: ["C#", "Visual Studio", "Unittests", "WPF", "Microsoft Windows"],
-      show: true,
-    },
-    {
-      title: "Datenbank Versionsverwaltung",
-      caption: "2014",
-      content:
-        "Software die PostgreSQL Datenbank Unterschiede zwischen einer vorherigen Version und der aktuellen Datenbank als Änderungs SQL-Dateien ablegt.",
-      type: "Work",
-      keywords: ["C#", "SQL", "PostgreSQL", "Visual Studio", "Unittests", "WPF", "Microsoft Windows"],
+      keywords: ["C#", "Visual Studio", "Subversion", "Unittests", "WPF", "Microsoft Windows"],
       show: true,
     },
     {
       title: "Windows Service Entwicklung",
-      caption: "2015",
+      caption: "2014",
       content:
         "Windows Service zur Erstellung von XML Dateien, die mithilfe der Variablen eines OPC UA Servers gefüllt werden. Die XML Dateien werden anschließend anhand einer XSD Datei auf Fehler geprüft und auf dem Dateisystem abgelegt.",
       type: "Work",
-      keywords: ["C#", "Visual Studio", "OPC UA", "XML", "XSD", "Microsoft Windows"],
+      keywords: ["C#", "Visual Studio", "Subversion", "OPC UA", "XML", "XSD", "Microsoft Windows"],
+      show: true,
+    },
+    {
+      title: "Datenbank Versionsverwaltung",
+      caption: "2015",
+      content:
+        "Software die PostgreSQL Datenbank Unterschiede zwischen einer vorherigen Version und der aktuellen Datenbank als Änderungs SQL-Dateien ablegt.",
+      type: "Work",
+      keywords: [
+        "C#",
+        "SQL",
+        "PostgreSQL",
+        "Visual Studio",
+        "Git",
+        "Unittests",
+        "WPF",
+        "Microsoft Windows",
+      ],
       show: true,
     },
     {
@@ -53,7 +62,7 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Betriebsdatenerfassung im Client/Server Prinzip mit REST Schnittstelle inklusive Berichte, Trends, Live-Monitoring, Produktionsplanung und der Verwaltung von Maschineneinstellungen.",
       type: "Work",
-      keywords: ["C#", "SQL", "PostgreSQL", "Visual Studio", "Unittests", "WPF"],
+      keywords: ["C#", "SQL", "PostgreSQL", "Visual Studio", "Git", "Unittests", "WPF"],
       show: true,
     },
     {
@@ -62,7 +71,18 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Software zur Anzeige aller Maschinen einer Fabrik als Webanwendung und integriert in Betriebsdatenerfassung. Maschinen können per drag and drop auf der Übersicht plaziert werden und zeigen die aktuellen Produktionsdaten.",
       type: "Work",
-      keywords: ["Java", "JavaScript", "Eclipse", "HTML", "CSS", "GWT", "Microsoft Windows", "Android", "iOS"],
+      keywords: [
+        "Java",
+        "JavaScript",
+        "Eclipse",
+        "Git",
+        "HTML",
+        "CSS",
+        "GWT",
+        "Microsoft Windows",
+        "Android",
+        "iOS",
+      ],
       show: true,
     },
     {
@@ -79,6 +99,7 @@ export default function (): Array<TimelineItemContent> {
         "ASP.NET Core",
         "PostgreSQL",
         "Visual Studio",
+        "Git",
         "Polymer",
         "HTML",
         "CSS",
@@ -102,6 +123,7 @@ export default function (): Array<TimelineItemContent> {
         "ASP.NET Core",
         "PostgreSQL",
         "Visual Studio",
+        "Git",
         "HTML",
         "SCSS",
         "Razor (CSHTML)",
@@ -113,7 +135,8 @@ export default function (): Array<TimelineItemContent> {
     {
       title: "Microsoft Certified Professional Prüfung",
       caption: "03/2019",
-      content: 'Im März 2019 habe ich erfolgreich die MCP Prüfung 483 "Programming in C#" abgeschlossen.',
+      content:
+        'Im März 2019 habe ich erfolgreich die MCP Prüfung 483 "Programming in C#" abgeschlossen.',
       type: "Education",
       show: true,
     },
@@ -123,13 +146,14 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Erstellung von automatischen UI Tests für das Order Management System mit Selenium. Die Tests werden automatisch nach dem Build Vorgang ausgeführt und prüfen die Grundfunktionen der Anwendung.",
       type: "Work",
-      keywords: ["C#", ".NET Core", "Visual Studio", "Selenium"],
+      keywords: ["C#", ".NET Core", "Visual Studio", "Git", "Selenium"],
       show: true,
     },
     {
       title: "Datenanalyse und Benutzerverwaltungs Anwendung",
       caption: "2020",
-      content: "Erstellung einer Webanwendung zur Anzeige von Berichten und Verwaltung von Benutzern.",
+      content:
+        "Erstellung einer Webanwendung zur Anzeige von Berichten und Verwaltung von Benutzern.",
       type: "Work",
       keywords: [
         "C#",
@@ -138,6 +162,7 @@ export default function (): Array<TimelineItemContent> {
         "ASP.NET Core",
         "Microsoft SQL Server",
         "Visual Studio",
+        "Git",
         "HTML",
         "SCSS",
         "Razor (CSHTML)",
@@ -164,6 +189,7 @@ export default function (): Array<TimelineItemContent> {
         "TypeScript",
         "React",
         "Visual Studio Code",
+        "Git",
         "Nvidia Jetson",
         "Intel Realsense",
         "Websocket",
@@ -181,8 +207,17 @@ export default function (): Array<TimelineItemContent> {
       show: true,
     },
     {
+      title: "Browsergame Entwicklung",
+      caption: `03/2020 - ${nowString}`,
+      content:
+        "Seit März 2020 gehöre ich dem ehrenamtlichen Entwicklerteam des Browsergames Hidden Empire Galaxy Adventures an. Hier wurde ich mit dem erstellen der nächsten Version (V5) beauftragt, die für das Jahr 2023 geplant ist.",
+      type: "Private",
+      keywords: ["TypeScript", "Vue.js", "Visual Studio Code", "Git", "HTML", "SCSS", "Websocket"],
+      show: true,
+    },
+    {
       title: "Webanwendung zur Assetverwaltung",
-      caption: "2020 - 2021",
+      caption: `12/2020 - ${nowString}`,
       content:
         "Unterstützung für die Weiterentwicklung einer AngularJS Web-App zur Assetverwaltung. Entwicklung von erweiterten Tabellen Funktionen wie eine Spaltenkonfiguration und Bearbeitungsmodus (Datagrid).",
       type: "Work",
@@ -194,20 +229,12 @@ export default function (): Array<TimelineItemContent> {
         "Microsoft SQL Server",
         "Visual Studio Code",
         "MariaDB",
+        "Git",
         "HTML",
         "SCSS",
         "Android",
         "iOS",
       ],
-      show: true,
-    },
-    {
-      title: "Browsergame Entwicklung",
-      caption: `03/2020 - ${nowString}`,
-      content:
-        "Seit März 2020 gehöre ich dem ehrenamtlichen Entwicklerteam des Browsergames Hidden Empire Galaxy Adventures an. Hier wurde ich mit dem erstellen der nächsten Version (V5) beauftragt, die für das Jahr 2023 geplant ist.",
-      type: "Private",
-      keywords: ["TypeScript", "Vue.js", "Visual Studio Code", "HTML", "SCSS", "Websocket"],
       show: true,
     },
     {
@@ -222,7 +249,15 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Als kleines Übungsprojekt für React gestartet, ist diese Webseite entstanden. Zusätzlich benutze ich diese Website um neue Web Technologien auszutesten.",
       type: "Private",
-      keywords: ["TypeScript", "React", "HTML", "SCSS"],
+      keywords: [
+        "TypeScript",
+        "React",
+        "Visual Studio Code",
+        "Git",
+        "HTML",
+        "SCSS",
+        "Microsoft Windows",
+      ],
       show: true,
     },
   ];

@@ -53,6 +53,7 @@ export default function Skills(props: SkillsProps) {
             </Grid>
             <Grid item xs={12} md={6} xl={4}>
               <SkillTitle title="Sonstiges" />
+              <SkillLine onClick={props.onSelection} skill="Git" value={100} />
               <SkillLine onClick={props.onSelection} skill="HTML" value={100} />
               <SkillLine onClick={props.onSelection} skill="CSS" value={100} />
               <SkillLine onClick={props.onSelection} skill="SCSS" value={90} />

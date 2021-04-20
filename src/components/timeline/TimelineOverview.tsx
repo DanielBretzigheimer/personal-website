@@ -85,7 +85,7 @@ export default function TimelineOverview() {
         open={skillHelpOpen}
         autoHideDuration={6000}
         onClose={() => setSkillHelpOpen(false)}
-        message="Drücken Sie auf einen Skill um diesen als Filter zu setzen"
+        message="Tipp: Zum Filtern auf Skill klicken"
       />
     </>
   );
