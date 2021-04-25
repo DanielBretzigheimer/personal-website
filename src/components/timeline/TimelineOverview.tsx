@@ -1,69 +1,48 @@
-import { Box, Chip, Hidden, Snackbar, Typography } from "@material-ui/core";
+import { Hidden, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import CategoryHeader from "../CategoryHeader";
-import ResumeIcon from "mdi-material-ui/FileAccountOutline";
 import MobileTimeline from "./MobileTimeline";
 import DesktopTimeline from "./DesktopTimeline";
 import Skills from "../skills/Skills";
 import TimelineItems from "../../data/TimelineItems";
-import ChipCollection from "../ChipCollection";
-import IntersectionNotifier from "../IntersectionNotifier";
+import Skill from "../../model/Skill";
+import TimelineFilterHeader from "./TimelineHeader";
+import TimelineFilter from "../../model/TimelineFilter";
+import Filter from "../../services/FilterService";
 
 export default function TimelineOverview() {
-  const [filters, setFilters] = useState(new Array<string>());
   const [timelineItems, setTimelineItems] = useState(TimelineItems());
-  const [skillHelpOpen, setSkillHelpOpen] = useState(false);
-  const timelineHelpShownKey = "Timeline_Help_Shown";
-  let shown = localStorage.getItem(timelineHelpShownKey) === "true";
+  const [filters, setFilters] = useState(new Array<TimelineFilter>());
 
   useEffect(() => {
-    const items = TimelineItems();
-    const filtered = items.filter((item) => {
-      return (
-        filters.length === 0 ||
-        (item.keywords?.some((keyword) => filters.includes(keyword)) ?? false)
-      );
-    });
+    const filtered = TimelineItems().filter((item) => Filter(item, filters));
     setTimelineItems(filtered);
   }, [filters]);
 
-  function addFilter(filter: string) {
-    if (filters.includes(filter)) return;
+  function addSkillFilter(skill: Skill) {
+    addFilter({ type: "keyword", value: skill.name });
+  }
 
+  function addFilter(filter: TimelineFilter) {
     setFilters([...filters, filter]);
   }
 
-  function removeFilter(filter: string) {
-    setFilters(filters.filter((f) => f !== filter));
-  }
-
-  function onResumeShown() {
-    if (!shown) {
-      setSkillHelpOpen(true);
-      localStorage.setItem(timelineHelpShownKey, "true");
-      shown = true;
+  function removeFilter(filter: TimelineFilter | Array<TimelineFilter>) {
+    if (Array.isArray(filter)) {
+      setFilters(filters.filter((f) => !filter.includes(f)));
+    } else {
+      setFilters(filters.filter((f) => f !== filter));
     }
   }
 
   return (
     <>
-      <Skills onSelection={addFilter} />
-      <IntersectionNotifier onShow={onResumeShown}>
-        <CategoryHeader>
-          <ResumeIcon fontSize="large" color="secondary" />
-          Lebenslauf
-        </CategoryHeader>
-      </IntersectionNotifier>
-      {filters.length > 0 ? (
-        <Box>
-          <span>Aktive Filter:</span>
-          <ChipCollection
-            chips={filters.map((f, i) => (
-              <Chip key={i} label={f} onDelete={() => removeFilter(f)} />
-            ))}
-          />
-        </Box>
-      ) : null}
+      <Skills onSelection={addSkillFilter} />
+      <TimelineFilterHeader
+        filters={filters}
+        addFilter={addFilter}
+        removeFilter={removeFilter}
+        visibleItemCount={timelineItems.length}
+      />
       {timelineItems.length > 0 ? (
         <>
           <Hidden mdDown>
@@ -81,12 +60,6 @@ export default function TimelineOverview() {
           </span>
         </Typography>
       )}
-      <Snackbar
-        open={skillHelpOpen}
-        autoHideDuration={6000}
-        onClose={() => setSkillHelpOpen(false)}
-        message="Tipp: Zum Filtern auf Skill klicken"
-      />
     </>
   );
 }

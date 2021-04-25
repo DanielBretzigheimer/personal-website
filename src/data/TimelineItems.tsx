@@ -1,6 +1,8 @@
+import React from "react";
+import { Link, Typography } from "@material-ui/core";
 import TimelineItemContent from "../model/TimelineItemContent";
 
-export default function (): Array<TimelineItemContent> {
+export default function TimelineItems(): Array<TimelineItemContent> {
   const now = new Date();
   const month = (now.getMonth() + 1).toString().padStart(2, "0");
   const nowString = `${month}/${now.getFullYear()}`;
@@ -11,14 +13,12 @@ export default function (): Array<TimelineItemContent> {
       caption: "09/2002 - 07/2012",
       content: "Johannes-Obernburger-Volksschule\nMain-Limes-Realschule\nAbschluss: Mittlere Reife",
       type: "Education",
-      show: true,
     },
     {
       title: "Berufsausbildung",
       caption: "09/2012 - 07/2015",
       content: "Ausbildung als Fachinformatiker Anwendungsentwicklung bei APE Engineering GmbH",
       type: "Education",
-      show: true,
     },
     {
       title: "Maschinensteuerungssoftware",
@@ -27,7 +27,7 @@ export default function (): Array<TimelineItemContent> {
         "Software zur Auswertung und Konfiguration von Garnreinigungsmaschinen mit Komunikation über eine BUS Schnittstelle.",
       type: "Work",
       keywords: ["C#", "Visual Studio", "Subversion", "Unittests", "WPF", "Microsoft Windows"],
-      show: true,
+      teamSize: 6,
     },
     {
       title: "Windows Service Entwicklung",
@@ -36,7 +36,7 @@ export default function (): Array<TimelineItemContent> {
         "Windows Service zur Erstellung von XML Dateien, die mithilfe der Variablen eines OPC UA Servers gefüllt werden. Die XML Dateien werden anschließend anhand einer XSD Datei auf Fehler geprüft und auf dem Dateisystem abgelegt.",
       type: "Work",
       keywords: ["C#", "Visual Studio", "Subversion", "OPC UA", "XML", "XSD", "Microsoft Windows"],
-      show: true,
+      teamSize: 1,
     },
     {
       title: "Datenbank Versionsverwaltung",
@@ -54,7 +54,7 @@ export default function (): Array<TimelineItemContent> {
         "WPF",
         "Microsoft Windows",
       ],
-      show: true,
+      teamSize: 1,
     },
     {
       title: "Betriebsdatenerfassung",
@@ -63,7 +63,7 @@ export default function (): Array<TimelineItemContent> {
         "Betriebsdatenerfassung im Client/Server Prinzip mit REST Schnittstelle inklusive Berichte, Trends, Live-Monitoring, Produktionsplanung und der Verwaltung von Maschineneinstellungen.",
       type: "Work",
       keywords: ["C#", "SQL", "PostgreSQL", "Visual Studio", "Git", "Unittests", "WPF"],
-      show: true,
+      teamSize: 8,
     },
     {
       title: "Maschinen Übersicht",
@@ -83,7 +83,25 @@ export default function (): Array<TimelineItemContent> {
         "Android",
         "iOS",
       ],
-      show: true,
+      teamSize: 1,
+    },
+    {
+      title: "Github Pull Request für CefSharp",
+      caption: "2018",
+      content: (
+        <Typography>
+          Mein erster Beitrag zu einem Open Source{" "}
+          <Link href="https://github.com/cefsharp/CefSharp">Projekt</Link> auf Github. Hierbei hatte
+          ich zuvor einen Bug gefunden und ein entsprechendes{" "}
+          <Link href="https://github.com/cefsharp/CefSharp/issues/1849">Issue</Link> ohne Lösung
+          gefunden. Nach kurzer Untersuchung war der Fehler schnell gefunden und konnte behoben
+          werden. Der{" "}
+          <Link href="https://github.com/cefsharp/CefSharp/pull/2232">Pull Request</Link> wurde
+          anschließend vom Maintainer in den Hauptbranch integriert.
+        </Typography>
+      ),
+      keywords: ["C#", "C++", "Visual Studio", "Git", "Github"],
+      type: "Private",
     },
     {
       title: "Update Verwaltungssoftware",
@@ -107,7 +125,7 @@ export default function (): Array<TimelineItemContent> {
         "Unittests",
         "Linux (Ubuntu)",
       ],
-      show: true,
+      teamSize: 2,
     },
     {
       title: "Order Management System",
@@ -130,7 +148,7 @@ export default function (): Array<TimelineItemContent> {
         "Unittests",
         "Microsoft Windows",
       ],
-      show: true,
+      teamSize: 2,
     },
     {
       title: "Microsoft Certified Professional Prüfung",
@@ -138,7 +156,6 @@ export default function (): Array<TimelineItemContent> {
       content:
         'Im März 2019 habe ich erfolgreich die MCP Prüfung 483 "Programming in C#" abgeschlossen.',
       type: "Education",
-      show: true,
     },
     {
       title: "Automatische UI Tests",
@@ -147,7 +164,7 @@ export default function (): Array<TimelineItemContent> {
         "Erstellung von automatischen UI Tests für das Order Management System mit Selenium. Die Tests werden automatisch nach dem Build Vorgang ausgeführt und prüfen die Grundfunktionen der Anwendung.",
       type: "Work",
       keywords: ["C#", ".NET Core", "Visual Studio", "Git", "Selenium"],
-      show: true,
+      teamSize: 2,
     },
     {
       title: "Datenanalyse und Benutzerverwaltungs Anwendung",
@@ -168,7 +185,7 @@ export default function (): Array<TimelineItemContent> {
         "Razor (CSHTML)",
         "Microsoft Windows",
       ],
-      show: true,
+      teamSize: 1,
     },
     {
       title: "Unterstützung bei der Ausbildung der Azubis",
@@ -176,7 +193,6 @@ export default function (): Array<TimelineItemContent> {
       content:
         "Zusätzlich zu meinem normalen Arbeitsalltag, helfe ich seit mitte 2020 bei der Ausbildung der Azubis mit. Hierzu gehört unter anderem das Erstellen von Aufgaben und die Beantwortung von Fragen.",
       type: "Work",
-      show: true,
     },
     {
       title: "Fitnessspiel Anwendung",
@@ -195,7 +211,7 @@ export default function (): Array<TimelineItemContent> {
         "Websocket",
         "Linux (Ubuntu)",
       ],
-      show: true,
+      teamSize: 4,
     },
     {
       title: "Video Player Anwendung",
@@ -204,7 +220,7 @@ export default function (): Array<TimelineItemContent> {
         "Entwicklung einer Software zum Anzeigen von Videos auf einem Beamer, die über eine RabbitMQ Nachricht empfangen werden.",
       type: "Work",
       keywords: ["Python", "Visual Studio Code", "RabbitMQ", "Linux (Ubuntu)"],
-      show: true,
+      teamSize: 2,
     },
     {
       title: "Browsergame Entwicklung",
@@ -213,7 +229,7 @@ export default function (): Array<TimelineItemContent> {
         "Seit März 2020 gehöre ich dem ehrenamtlichen Entwicklerteam des Browsergames Hidden Empire Galaxy Adventures an. Hier wurde ich mit dem erstellen der nächsten Version (V5) beauftragt, die für das Jahr 2023 geplant ist.",
       type: "Private",
       keywords: ["TypeScript", "Vue.js", "Visual Studio Code", "Git", "HTML", "SCSS", "Websocket"],
-      show: true,
+      teamSize: 3,
     },
     {
       title: "Webanwendung zur Assetverwaltung",
@@ -235,13 +251,12 @@ export default function (): Array<TimelineItemContent> {
         "Android",
         "iOS",
       ],
-      show: true,
+      teamSize: 5,
     },
     {
       title: "Compliance Schulung",
       caption: "02/2021",
       type: "Education",
-      show: true,
     },
     {
       title: "Persönliche Webseite",
@@ -258,7 +273,7 @@ export default function (): Array<TimelineItemContent> {
         "SCSS",
         "Microsoft Windows",
       ],
-      show: true,
+      teamSize: 1,
     },
   ];
 }

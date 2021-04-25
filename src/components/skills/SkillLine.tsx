@@ -1,5 +1,6 @@
 import { Box, ButtonBase, LinearProgress, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import Skill from "../../model/Skill";
 
 const useStyle = makeStyles(() => ({
   progressBar: {
@@ -13,9 +14,8 @@ const useStyle = makeStyles(() => ({
 }));
 
 export interface SkillLineProps {
-  skill: string;
-  value: number;
-  onClick: (skill: string) => void;
+  skill: Skill;
+  onClick: (skill: Skill) => void;
 }
 
 export default function SkillLine(props: SkillLineProps) {
@@ -26,11 +26,15 @@ export default function SkillLine(props: SkillLineProps) {
       <Box margin={1.5} width="100%">
         <Box display="flex">
           <Box flexGrow={1}>
-            <Typography>{props.skill}</Typography>
+            <Typography>{props.skill.name}</Typography>
           </Box>
-          <Typography>{props.value} %</Typography>
+          <Typography>{props.skill.value} %</Typography>
         </Box>
-        <LinearProgress variant="determinate" value={props.value} className={classes.progressBar} />
+        <LinearProgress
+          variant="determinate"
+          value={props.skill.value}
+          className={classes.progressBar}
+        />
       </Box>
     </ButtonBase>
   );

@@ -6,5 +6,5 @@ export default interface TimelineItemContent {
   content?: string | ReactNode;
   type: "Education" | "Private" | "Work";
   keywords?: Array<string>;
-  show: boolean;
+  teamSize?: number;
 }

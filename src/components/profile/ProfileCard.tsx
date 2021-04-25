@@ -5,23 +5,28 @@ import {
   CardContent,
   Divider,
   Grid,
+  IconButton,
   InputLabel,
   makeStyles,
   Typography,
+  Link,
 } from "@material-ui/core";
 import React from "react";
-import { Link } from "@material-ui/core";
 import MailIcon from "mdi-material-ui/EmailOutline";
 import WebsiteIcon from "mdi-material-ui/Earth";
 import PhoneIcon from "mdi-material-ui/PhoneOutline";
 import LocationIcon from "mdi-material-ui/MapMarkerOutline";
 import BirthIcon from "mdi-material-ui/CalendarOutline";
 import ProfilePicture from "../../images/Profile_Picture.jpg";
+import { Github, Gitlab, StackOverflow } from "mdi-material-ui";
 
 const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(7),
     height: theme.spacing(7),
+  },
+  titleName: {
+    hyphens: "manual",
   },
 }));
 
@@ -65,7 +70,9 @@ export default function ProfileCard() {
           <Box display="flex" flexDirection="row" alignItems="center">
             <Avatar src={ProfilePicture} className={classes.large} />
             <Box marginLeft={2}>
-              <Typography variant="h4">Daniel Bretzigheimer</Typography>
+              <Typography variant="h4" className={classes.titleName}>
+                Daniel Bretzigheimer
+              </Typography>
               <Typography variant="subtitle1">Frontend Developer</Typography>
             </Box>
           </Box>
@@ -87,6 +94,23 @@ export default function ProfileCard() {
             Frankfurt am Main. Meine Leidenschaft ist die Frontend Entwicklung, allerdings habe ich
             auch Erfahrung in der Backend Erstellung inklusive der Datenabfrage über eine Datenbank.
           </Typography>
+          <Box>
+            <Link href="https://github.com/DanielBretzigheimer">
+              <IconButton>
+                <Github />
+              </IconButton>
+            </Link>
+            <Link href="https://gitlab.com/dbretzigheimer95">
+              <IconButton>
+                <Gitlab />
+              </IconButton>
+            </Link>
+            <Link href="https://stackoverflow.com/users/2119579/daniel-bretzigheimer">
+              <IconButton>
+                <StackOverflow />
+              </IconButton>
+            </Link>
+          </Box>
         </CardContent>
         <Divider />
         <CardContent>

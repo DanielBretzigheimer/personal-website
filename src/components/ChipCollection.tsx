@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 interface ChipCollectionProps {
-  chips: Array<React.ReactNode>;
+  children: Array<React.ReactNode>;
 }
 
 export default function ChipCollection(props: ChipCollectionProps) {
@@ -27,7 +27,7 @@ export default function ChipCollection(props: ChipCollectionProps) {
 
   return (
     <Box component="ul" className={classes.chipList}>
-      {props.chips.map((chip, i) => (
+      {props.children.map((chip, i) => (
         <li key={i} className={classes.chip}>
           {chip}
         </li>

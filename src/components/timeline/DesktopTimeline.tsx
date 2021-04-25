@@ -5,6 +5,7 @@ import React from "react";
 import Seperator from "./Seperator";
 import TimelineCard from "./TimelineCard";
 import TimelineProps from "./TimelineProps";
+import "./DesktopTimeline.scss";
 
 const useStyle = makeStyles(() => ({
   timelineContent: {

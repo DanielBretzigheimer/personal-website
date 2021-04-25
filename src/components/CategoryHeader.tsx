@@ -7,7 +7,7 @@ interface CategoryHeaderProps {
 
 export default function CategoryHeader(props: CategoryHeaderProps) {
   return (
-    <Box textAlign="center">
+    <Box textAlign="center" marginTop={3} marginBottom={2}>
       <Typography variant="h3">{props.children}</Typography>
     </Box>
   );
