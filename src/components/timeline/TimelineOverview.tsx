@@ -23,7 +23,13 @@ export default function TimelineOverview() {
   }
 
   function addFilter(filter: TimelineFilter) {
-    setFilters([...filters, filter]);
+    if (filter.type === "teamSize" && filters.some((f) => f.type === "teamSize")) {
+      // only one teamSize filter is allowed
+      const currentFilter = filters.find((f) => f.type === "teamSize");
+      setFilters([...filters.filter((f) => f !== currentFilter), filter]);
+    } else {
+      setFilters([...filters, filter]);
+    }
   }
 
   function removeFilter(filter: TimelineFilter | Array<TimelineFilter>) {

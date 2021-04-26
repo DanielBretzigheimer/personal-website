@@ -38,8 +38,8 @@ export default function TimelineFilters(props: TimelineFiltersProps) {
         </IconButton>
       </Box>
       <Divider />
-      <Box margin={2}>
-        <Grid container spacing={2}>
+      <Box padding={3}>
+        <Grid container>
           <Grid item xs={12}>
             <TypeFilter
               addFilter={props.addFilter}

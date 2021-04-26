@@ -1,4 +1,4 @@
 export default interface TimelineFilter {
   type: "keyword" | "teamSize" | "text" | "type";
-  value: string;
+  value: string | number[];
 }

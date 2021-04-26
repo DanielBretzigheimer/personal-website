@@ -6,12 +6,16 @@ export default function Filter(item: TimelineItemContent, filters: Array<Timelin
 
   const keywordFilters = filters.filter((f) => f.type === "keyword").map((f) => f.value);
   const typeFilters = filters.filter((f) => f.type === "type").map((f) => f.value);
+  const teamSize = filters.find((f) => f.type === "teamSize");
 
   const hasKeyword =
     (keywordFilters.length === 0 ||
       item.keywords?.some((keyword) => keywordFilters.includes(keyword))) ??
     false;
   const hasType = typeFilters.length === 0 || typeFilters.includes(item.type);
+  const hasTeamSize =
+    !teamSize ||
+    (item.teamSize && teamSize.value[0] <= item.teamSize && teamSize.value[1] >= item.teamSize);
 
-  return hasKeyword && hasType;
+  return hasKeyword && hasType && hasTeamSize;
 }

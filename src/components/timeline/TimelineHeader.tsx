@@ -1,4 +1,4 @@
-import { Box, Chip, Drawer, Hidden, IconButton, Snackbar, Typography } from "@material-ui/core";
+import { Box, Chip, Drawer, IconButton, Snackbar, Typography } from "@material-ui/core";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
 import ResumeIcon from "mdi-material-ui/FileAccountOutline";
@@ -21,21 +21,15 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
   const timelineHelpShownKey = "Timeline_Help_Shown";
   let shown = localStorage.getItem(timelineHelpShownKey) === "true";
 
-  function getFilterTypeName(filterType: "keyword" | "teamSize" | "text" | "type") {
-    switch (filterType) {
-      case "teamSize":
-        return "Team größe";
-      case "type":
-        return "Typ";
-      default:
-        return null;
-    }
-  }
-
   function getFilterLabel(filter: TimelineFilter) {
-    const typeLabel = getFilterTypeName(filter.type);
-
-    return typeLabel ? `${typeLabel}: ${filter.value}` : filter.value;
+    switch (filter.type) {
+      case "teamSize":
+        return `Teamgröße zwischen ${filter.value[0]} - ${filter.value[1]}`;
+      case "type":
+        return `Typ: ${filter.value}`;
+      default:
+        return filter.value;
+    }
   }
 
   function onResumeShown() {
@@ -73,21 +67,9 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
           </IconButton>
         </Box>
       </IntersectionNotifier>
-      <Hidden smUp>
-        <Drawer open={filtersDrawerOpen} anchor="right">
-          {filtersDrawerContent()}
-        </Drawer>
-      </Hidden>
-      <Hidden xsDown>
-        <Drawer
-          open={filtersDrawerOpen}
-          variant="permanent"
-          anchor="right"
-          onClose={() => setFiltersDrawerOpen(false)}
-        >
-          {filtersDrawerContent()}
-        </Drawer>
-      </Hidden>
+      <Drawer open={filtersDrawerOpen} onClose={() => setFiltersDrawerOpen(false)} anchor="right">
+        {filtersDrawerContent()}
+      </Drawer>
       {props.filters.length > 0 ? (
         <Box>
           <Typography>Aktive Filter:</Typography>
