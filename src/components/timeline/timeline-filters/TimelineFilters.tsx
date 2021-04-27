@@ -1,6 +1,7 @@
 import { Box, Button, Divider, Grid, IconButton, Typography } from "@material-ui/core";
 import { Close } from "mdi-material-ui";
 import React from "react";
+import SkillFilter from "./SkillFilter";
 import TeamSizeFilter from "./TeamSizeFilter";
 import TimelineFilterProps from "./TimelineFilterProps";
 import TypeFilter from "./TypeFilter";
@@ -48,13 +49,19 @@ export default function TimelineFilters(props: TimelineFiltersProps) {
             />
           </Grid>
           <Grid item xs={12}>
+            <SkillFilter
+              addFilter={props.addFilter}
+              removeFilter={props.removeFilter}
+              filters={props.filters}
+            />
+          </Grid>
+          <Grid item xs={12}>
             <TeamSizeFilter
               addFilter={props.addFilter}
               removeFilter={props.removeFilter}
               filters={props.filters}
             />
           </Grid>
-          <Grid item xs={12}></Grid>
         </Grid>
       </Box>
     </>

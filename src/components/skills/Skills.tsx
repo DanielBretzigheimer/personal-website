@@ -22,8 +22,8 @@ export default function Skills(props: SkillsProps) {
       <Card>
         <Box marginTop={2}>
           <Grid container spacing={2}>
-            {skillGroups.map((skillGroup) => (
-              <Grid item xs={12} md={6} xl={4}>
+            {skillGroups.map((skillGroup, i) => (
+              <Grid key={i} item xs={12} md={6} xl={4}>
                 <SkillTitle title={skillGroup.name} />
                 {skillGroup.skills.map((skill, i) => (
                   <SkillLine key={i} onClick={props.onSelection} skill={skill} />

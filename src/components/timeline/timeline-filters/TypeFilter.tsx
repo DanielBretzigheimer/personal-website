@@ -7,7 +7,7 @@ import TimelineFilterProps from "./TimelineFilterProps";
 export default function TypeFilter(props: TimelineFilterProps) {
   const types = Array.from(new Set<string>(TimelineItems().map((item) => item.type)));
 
-  function addFilter(type: "keyword" | "teamSize" | "text" | "type", value: string) {
+  function addFilter(type: "keyword" | "teamSize" | "type", value: string) {
     props.addFilter({ type, value });
   }
 
@@ -26,7 +26,7 @@ export default function TypeFilter(props: TimelineFilterProps) {
 
   return (
     <>
-      <Typography>Typ</Typography>
+      <Typography variant="h6">Typ</Typography>
       <ChipCollection>
         {types.map((type, i) => {
           const filter = props.filters.find((f) => f.type === "type" && f.value === type);

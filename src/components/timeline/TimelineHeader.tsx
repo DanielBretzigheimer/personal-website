@@ -16,10 +16,7 @@ interface TimelineHeaderProps {
 }
 
 export default function TimelineFilterHeader(props: TimelineHeaderProps) {
-  const [skillHelpOpen, setSkillHelpOpen] = useState(false);
   const [filtersDrawerOpen, setFiltersDrawerOpen] = useState(false);
-  const timelineHelpShownKey = "Timeline_Help_Shown";
-  let shown = localStorage.getItem(timelineHelpShownKey) === "true";
 
   function getFilterLabel(filter: TimelineFilter) {
     switch (filter.type) {
@@ -29,14 +26,6 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
         return `Typ: ${filter.value}`;
       default:
         return filter.value;
-    }
-  }
-
-  function onResumeShown() {
-    if (!shown) {
-      setSkillHelpOpen(true);
-      localStorage.setItem(timelineHelpShownKey, "true");
-      shown = true;
     }
   }
 
@@ -54,19 +43,17 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
 
   return (
     <>
-      <IntersectionNotifier onShow={onResumeShown}>
-        <Box display="flex" alignItems="baseline">
-          <Box flexGrow={1}>
-            <CategoryHeader>
-              <ResumeIcon fontSize="large" color="secondary" />
-              Lebenslauf
-            </CategoryHeader>
-          </Box>
-          <IconButton onClick={() => setFiltersDrawerOpen(true)}>
-            <FilterOutline />
-          </IconButton>
+      <Box display="flex" alignItems="baseline">
+        <Box flexGrow={1}>
+          <CategoryHeader>
+            <ResumeIcon fontSize="large" color="secondary" />
+            Lebenslauf
+          </CategoryHeader>
         </Box>
-      </IntersectionNotifier>
+        <IconButton onClick={() => setFiltersDrawerOpen(true)}>
+          <FilterOutline />
+        </IconButton>
+      </Box>
       <Drawer open={filtersDrawerOpen} onClose={() => setFiltersDrawerOpen(false)} anchor="right">
         {filtersDrawerContent()}
       </Drawer>
@@ -80,12 +67,6 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
           </ChipCollection>
         </Box>
       ) : null}
-      <Snackbar
-        open={skillHelpOpen}
-        autoHideDuration={6000}
-        onClose={() => setSkillHelpOpen(false)}
-        message="Tipp: Zum Filtern auf Skill klicken"
-      />
     </>
   );
 }

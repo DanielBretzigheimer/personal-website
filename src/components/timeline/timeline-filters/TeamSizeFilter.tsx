@@ -32,7 +32,7 @@ export default function TeamSizeFilter(props: TimelineFilterProps) {
 
   return (
     <>
-      <Typography>Teamgröße</Typography>
+      <Typography variant="h6">Teamgröße</Typography>
       <Slider
         value={teamSizeFilterValues}
         min={0}

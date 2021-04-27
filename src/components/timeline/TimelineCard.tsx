@@ -28,11 +28,11 @@ export default function TimelineCard(props: TimelineCardProps) {
     if (keywords) {
       return (
         <ChipCollection>
-          {keywords.map((keyword) => {
+          {keywords.map((keyword, i) => {
             const color = props.activeFilters.map((f) => f.value).includes(keyword)
               ? "secondary"
               : "default";
-            return <Chip variant="outlined" color={color} label={keyword} />;
+            return <Chip key={i} variant="outlined" color={color} label={keyword} />;
           })}
         </ChipCollection>
       );
