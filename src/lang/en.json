@@ -1,0 +1,13 @@
+{
+  "job-title": "Frontend Developer",
+  "about-me": "About me",
+  "bio": "Bio",
+  "mail": "Mail",
+  "website": "Website",
+  "phone": "Phone",
+  "address": "Address",
+  "birthdate": "Date of birth",
+  "germany": "Germany",
+  "welcome-content": "Welcome on my personal website. Here I want to introduce myself and my skills. Additionally this site is used as example application. The source code can be publicly viewed <1>here</1>.",
+  "about-me-content": "My name is Daniel Bretzigheimer and I am software developer near Frankfurt am Main. My passion is the frontend development, but I'm also experienced in the creation of backends, including the querying of data from a database."
+}

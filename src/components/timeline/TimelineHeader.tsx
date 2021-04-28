@@ -1,4 +1,4 @@
-import { Box, Chip, Drawer, IconButton, Snackbar, Typography } from "@material-ui/core";
+import { Box, Chip, Drawer, IconButton, Typography } from "@material-ui/core";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
 import ResumeIcon from "mdi-material-ui/FileAccountOutline";
@@ -6,7 +6,6 @@ import TimelineFilter from "../../model/TimelineFilter";
 import CategoryHeader from "../CategoryHeader";
 import ChipCollection from "../ChipCollection";
 import TimelineFilters from "./timeline-filters/TimelineFilters";
-import IntersectionNotifier from "../IntersectionNotifier";
 
 interface TimelineHeaderProps {
   filters: Array<TimelineFilter>;

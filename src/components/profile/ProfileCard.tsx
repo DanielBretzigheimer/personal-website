@@ -19,6 +19,7 @@ import LocationIcon from "mdi-material-ui/MapMarkerOutline";
 import BirthIcon from "mdi-material-ui/CalendarOutline";
 import ProfilePicture from "../../images/Profile_Picture.jpg";
 import { Github, Gitlab, StackOverflow } from "mdi-material-ui";
+import { Trans, useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -32,32 +33,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProfileCard() {
   const classes = useStyles();
+  const { t } = useTranslation();
   const profileInfoLines = [
     {
-      label: "Mail",
+      label: t("mail"),
       icon: <MailIcon />,
       text: "dbretzigheimer95@gmail.com",
       link: "mailto:dbretzigheimer95@gmail.com",
     },
     {
-      label: "Website",
+      label: t("website"),
       icon: <WebsiteIcon />,
       text: "https://daniel-bretzigheimer.dev",
       link: "https://daniel-bretzigheimer.netlify.app/",
     },
     {
-      label: "Telefon",
+      label: t("phone"),
       icon: <PhoneIcon />,
       text: "+49 151 14446626",
       link: "tel:+4915114446626",
     },
     {
-      label: "Adresse",
+      label: t("address"),
       icon: <LocationIcon />,
-      text: "Bergstraße 26, 63785 Obernburg, Germany",
+      text: `Bergstraße 26, 63785 Obernburg, ${t("germany")}`,
     },
     {
-      label: "Geburtsdatum",
+      label: t("birthdate"),
       icon: <BirthIcon />,
       text: "20.11.1995",
     },
@@ -80,20 +82,18 @@ export default function ProfileCard() {
         <Divider />
         <CardContent>
           <Typography>
-            Willkommen auf meiner Webseite. Hier möchte ich mich und meine Fähigkeiten vorstellen.
-            Zusätzlich soll die Seite als Beispiel Anwendung dienen, weshalb der Quellcode{" "}
-            <Link href="https://gitlab.com/dbretzigheimer95/personal-website">hier</Link> öffentlich
-            eingesehen werden kann.
+            <Trans
+              i18nKey="welcome-content"
+              components={{
+                1: <Link href="https://gitlab.com/dbretzigheimer95/personal-website" />,
+              }}
+            />
           </Typography>
         </CardContent>
         <Divider />
         <CardContent>
-          <Typography variant="h5">Über mich</Typography>
-          <Typography>
-            Mein Name ist Daniel Bretzigheimer und ich bin Software Entwickler in der nähe von
-            Frankfurt am Main. Meine Leidenschaft ist die Frontend Entwicklung, allerdings habe ich
-            auch Erfahrung in der Backend Erstellung inklusive der Datenabfrage über eine Datenbank.
-          </Typography>
+          <Typography variant="h5">{t("about-me")}</Typography>
+          <Typography>{t("about-me-content")}</Typography>
           <Box>
             <Link href="https://github.com/DanielBretzigheimer">
               <IconButton>
@@ -114,7 +114,7 @@ export default function ProfileCard() {
         </CardContent>
         <Divider />
         <CardContent>
-          <Typography variant="h5">Bio</Typography>
+          <Typography variant="h5">{t("bio")}</Typography>
           <Grid container>
             {profileInfoLines.map((pi, index) => {
               return (
