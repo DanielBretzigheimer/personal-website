@@ -8,6 +8,6 @@
   "address": "Adresse",
   "birthdate": "Geburtsdatum",
   "germany": "Deutschland",
-  "welcome-content": "Willkommen auf meiner Webseite. Hier möchte ich mich und meine Fähigkeiten vorstellen. Zusätzlich soll die Seite als Beispiel Anwendung dienen, weshalb der Quellcode <Link href=\"https://gitlab.com/dbretzigheimer95/personal-website\">hier</Link> öffentlich eingesehen werden kann.",
+  "welcome-content": "Willkommen auf meiner Webseite. Hier möchte ich mich und meine Fähigkeiten vorstellen. Zusätzlich soll die Seite als Beispiel Anwendung dienen, weshalb der Quellcode <1>hier</1> öffentlich eingesehen werden kann.",
   "about-me-content": "Mein Name ist Daniel Bretzigheimer und ich bin Software Entwickler in der nähe von Frankfurt am Main. Meine Leidenschaft ist die Frontend Entwicklung, allerdings habe ich auch Erfahrung in der Backend Erstellung inklusive der Datenabfrage über eine Datenbank."
 }
