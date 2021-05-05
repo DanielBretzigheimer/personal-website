@@ -1,6 +1,7 @@
 import { Box, Button, Divider, Grid, IconButton, Typography } from "@material-ui/core";
 import { Close } from "mdi-material-ui";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SkillFilter from "./SkillFilter";
 import TeamSizeFilter from "./TeamSizeFilter";
 import TimelineFilterProps from "./TimelineFilterProps";
@@ -12,7 +13,7 @@ interface TimelineFiltersProps extends TimelineFilterProps {
 }
 
 export default function TimelineFilters(props: TimelineFiltersProps) {
-  // "keyword" | "teamSize" | "text" | "type"
+  const { t } = useTranslation();
 
   function resetFilters() {
     props.removeFilter(props.filters);
@@ -29,10 +30,12 @@ export default function TimelineFilters(props: TimelineFiltersProps) {
         marginBottom={1}
       >
         <Button color="primary" onClick={resetFilters}>
-          Zurücksetzen
+          {t("reset")}
         </Button>
         <Box flexGrow={1} textAlign="center">
-          <Typography>Ergebnisse: {props.visibleItemCount}</Typography>
+          <Typography>
+            {t("results")}: {props.visibleItemCount}
+          </Typography>
         </Box>
         <IconButton onClick={props.onClose}>
           <Close />

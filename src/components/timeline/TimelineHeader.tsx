@@ -1,4 +1,4 @@
-import { Box, Chip, Drawer, IconButton, Typography } from "@material-ui/core";
+import { Box, Chip, Drawer, IconButton, makeStyles, Typography } from "@material-ui/core";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
 import ResumeIcon from "mdi-material-ui/FileAccountOutline";
@@ -6,6 +6,8 @@ import TimelineFilter from "../../model/TimelineFilter";
 import CategoryHeader from "../CategoryHeader";
 import ChipCollection from "../ChipCollection";
 import TimelineFilters from "./timeline-filters/TimelineFilters";
+import { useTranslation } from "react-i18next";
+import { maxTeamSizeValue } from "../../model/TimelineItemContent";
 
 interface TimelineHeaderProps {
   filters: Array<TimelineFilter>;
@@ -14,18 +16,31 @@ interface TimelineHeaderProps {
   addFilter: (filter: TimelineFilter) => void;
 }
 
+const useStyle = makeStyles(() => ({
+  drawer: {
+    maxWidth: "500px",
+  },
+}));
+
 export default function TimelineFilterHeader(props: TimelineHeaderProps) {
+  const classes = useStyle();
+  const { t } = useTranslation();
   const [filtersDrawerOpen, setFiltersDrawerOpen] = useState(false);
 
   function getFilterLabel(filter: TimelineFilter) {
-    switch (filter.type) {
-      case "teamSize":
-        return `Teamgröße zwischen ${filter.value[0]} - ${filter.value[1]}`;
-      case "type":
-        return `Typ: ${filter.value}`;
-      default:
-        return filter.value;
+    if (filter.type === "teamSize" && Array.isArray(filter.value)) {
+      const [start, end] = filter.value;
+      return t("team-size-filter", {
+        start,
+        end: end > maxTeamSizeValue ? `${maxTeamSizeValue - 1}+` : end,
+      });
+    } else if (filter.type === "type" && typeof filter.value === "string") {
+      return t("type-filter", { value: t(filter.value.toLocaleLowerCase()) });
+    } else if (typeof filter.value === "string") {
+      return t(filter.value);
     }
+
+    return filter.value;
   }
 
   function filtersDrawerContent() {
@@ -46,19 +61,24 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
         <Box flexGrow={1}>
           <CategoryHeader>
             <ResumeIcon fontSize="large" color="secondary" />
-            Lebenslauf
+            {t("curriculum-vitae")}
           </CategoryHeader>
         </Box>
         <IconButton onClick={() => setFiltersDrawerOpen(true)}>
           <FilterOutline />
         </IconButton>
       </Box>
-      <Drawer open={filtersDrawerOpen} onClose={() => setFiltersDrawerOpen(false)} anchor="right">
+      <Drawer
+        className={classes.drawer}
+        open={filtersDrawerOpen}
+        onClose={() => setFiltersDrawerOpen(false)}
+        anchor="right"
+      >
         {filtersDrawerContent()}
       </Drawer>
       {props.filters.length > 0 ? (
         <Box>
-          <Typography>Aktive Filter:</Typography>
+          <Typography>{t("active-filters")}</Typography>
           <ChipCollection>
             {props.filters.map((f, i) => (
               <Chip key={i} label={getFilterLabel(f)} onDelete={() => props.removeFilter(f)} />

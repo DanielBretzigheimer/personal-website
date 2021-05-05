@@ -1,6 +1,7 @@
 import { Box, Card, Grid } from "@material-ui/core";
 import { TuneVertical } from "mdi-material-ui";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SkillData from "../../data/SkillData";
 import Skill from "../../model/Skill";
 import CategoryHeader from "../CategoryHeader";
@@ -13,11 +14,12 @@ interface SkillsProps {
 
 export default function Skills(props: SkillsProps) {
   const skillGroups = SkillData();
+  const { t } = useTranslation();
 
   return (
     <Box>
       <CategoryHeader>
-        <TuneVertical fontSize="large" color="secondary" /> Skills
+        <TuneVertical fontSize="large" color="secondary" /> {t("skills")}
       </CategoryHeader>
       <Card>
         <Box marginTop={2}>

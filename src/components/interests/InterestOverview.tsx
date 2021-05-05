@@ -1,11 +1,4 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Grid,
-  Link,
-  Typography,
-} from "@material-ui/core";
+import { Box, Card, CardContent, Grid, Link, Typography } from "@material-ui/core";
 import React, { ReactNode } from "react";
 import CategoryHeader from "../CategoryHeader";
 import HeartIcon from "mdi-material-ui/Heart";
@@ -15,6 +8,7 @@ import ShootingIcon from "mdi-material-ui/Pistol";
 import TravelIcon from "mdi-material-ui/Airplane";
 import MotorbikeIcon from "mdi-material-ui/Motorbike";
 import SwimIcon from "mdi-material-ui/Swim";
+import { Trans, useTranslation } from "react-i18next";
 
 interface Interest {
   icon: ReactNode;
@@ -22,50 +16,48 @@ interface Interest {
 }
 
 export default function InterestOverview() {
+  const { t } = useTranslation();
   const interests: Array<Interest> = [
     {
       icon: <ShootingIcon fontSize="large" />,
-      title: "Sportschießen",
+      title: t("sport-shooting"),
     },
     {
       icon: <SwimIcon fontSize="large" />,
-      title: "Schwimmen",
+      title: t("swimming"),
     },
     {
       icon: <GamingIcon fontSize="large" />,
-      title: "Gaming",
+      title: t("gaming"),
     },
     {
       icon: <TravelIcon fontSize="large" />,
-      title: "Reisen",
+      title: t("traveling"),
     },
     {
       icon: <MovieIcon fontSize="large" />,
-      title: "Filme",
+      title: t("movies"),
     },
     {
       icon: <MotorbikeIcon fontSize="large" />,
-      title: "Motorradfahren",
+      title: t("motorcycling"),
     },
   ];
 
   return (
     <>
       <CategoryHeader>
-        <HeartIcon fontSize="large" color="secondary" /> Interessen
+        <HeartIcon fontSize="large" color="secondary" /> {t("interests")}
       </CategoryHeader>
       <Card>
         <CardContent>
           <Typography>
-            Neben meinem Beruf als Software Entwickler bin ich in unserem{" "}
-            <Link href="https://www.sg-eisenbach1958.de" target="_blank">
-              Schützenverein
-            </Link>{" "}
-            als Jugendleiter und EDV Beauftragter tätig. In den Sommer Monaten
-            gehe ich nach der Arbeit gerne im Badesee schwimmen. Sollte das
-            Wetter mal nicht passen, bin ich auch großer Filmliebhaber oder
-            spiele das ein oder andere Computerspiel. In meinem Urlaub Reise und
-            Erkunde ich gerne Europa.
+            <Trans
+              i18nKey="interests-description"
+              components={{
+                1: <Link href="https://www.sg-eisenbach1958.de" target="_blank" />,
+              }}
+            />
           </Typography>
         </CardContent>
 

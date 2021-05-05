@@ -1,10 +1,12 @@
 import { Box, Chip, Typography } from "@material-ui/core";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SkillData from "../../../data/SkillData";
 import ChipCollection from "../../ChipCollection";
 import TimelineFilterProps from "./TimelineFilterProps";
 
 export default function SkillFilter(props: TimelineFilterProps) {
+  const { t } = useTranslation();
   const skillGroups = SkillData();
 
   function addFilter(value: string) {
@@ -13,10 +15,10 @@ export default function SkillFilter(props: TimelineFilterProps) {
 
   return (
     <>
-      <Typography variant="h6">Skill</Typography>
+      <Typography variant="h6">{t("skill")}</Typography>
       {skillGroups.map((group, i) => (
         <Box key={i}>
-          <Typography>{group.name}</Typography>
+          <Typography>{t(group.name)}</Typography>
           <ChipCollection>
             {group.skills.map((skill, i) => {
               const filter = props.filters.find(
@@ -26,7 +28,7 @@ export default function SkillFilter(props: TimelineFilterProps) {
               return (
                 <Chip
                   key={i}
-                  label={skill.name}
+                  label={t(skill.name)}
                   onClick={() => (filter ? props.removeFilter(filter) : addFilter(skill.name))}
                   color={color}
                 />

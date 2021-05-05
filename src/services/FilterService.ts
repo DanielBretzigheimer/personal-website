@@ -10,7 +10,7 @@ export default function Filter(item: TimelineItemContent, filters: Array<Timelin
 
   const hasKeyword =
     (keywordFilters.length === 0 ||
-      item.keywords?.some((keyword) => keywordFilters.includes(keyword))) ??
+      item.skills?.some((skill) => keywordFilters.includes(skill.name))) ??
     false;
   const hasType = typeFilters.length === 0 || typeFilters.includes(item.type);
   const hasTeamSize =

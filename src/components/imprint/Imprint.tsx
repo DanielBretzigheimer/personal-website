@@ -9,8 +9,10 @@ import {
   useTheme,
 } from "@material-ui/core";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Imprint() {
+  const { t } = useTranslation();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -19,10 +21,10 @@ export default function Imprint() {
   return (
     <>
       <Link style={{ cursor: "pointer" }} onClick={() => setOpen(true)}>
-        Impressum
+        {t("imprint")}
       </Link>
       <Dialog open={open} fullScreen={fullScreen} onClose={() => setOpen(false)}>
-        <DialogTitle>Impressum</DialogTitle>
+        <DialogTitle>{t("imprint")}</DialogTitle>
         <DialogContent>
           <p>Angaben gemäß § 5 TMG</p>
           <p>

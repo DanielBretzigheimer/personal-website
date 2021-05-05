@@ -1,8 +1,9 @@
 import { Box, Card, CardContent, Chip, Tooltip, Typography } from "@material-ui/core";
 import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi-material-ui";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
-import TimelineItemContent from "../../model/TimelineItemContent";
+import TimelineItemContent, { maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
 
 interface TimelineCardProps {
@@ -11,6 +12,8 @@ interface TimelineCardProps {
 }
 
 export default function TimelineCard(props: TimelineCardProps) {
+  const { t } = useTranslation();
+
   function getContent() {
     if (typeof props.item.content === "string") {
       return (
@@ -24,15 +27,15 @@ export default function TimelineCard(props: TimelineCardProps) {
   }
 
   function getKeywords() {
-    const keywords = props.item.keywords;
-    if (keywords) {
+    const skills = props.item.skills;
+    if (skills) {
       return (
         <ChipCollection>
-          {keywords.map((keyword, i) => {
-            const color = props.activeFilters.map((f) => f.value).includes(keyword)
+          {skills.map((skill, i) => {
+            const color = props.activeFilters.map((f) => f.value).includes(skill.name)
               ? "secondary"
               : "default";
-            return <Chip key={i} variant="outlined" color={color} label={keyword} />;
+            return <Chip key={i} variant="outlined" color={color} label={t(skill.name)} />;
           })}
         </ChipCollection>
       );
@@ -52,8 +55,10 @@ export default function TimelineCard(props: TimelineCardProps) {
           <AccountGroupOutline />
         );
 
+      const teamSize =
+        props.item.teamSize > maxTeamSizeValue ? `${maxTeamSizeValue - 1}+` : props.item.teamSize;
       return (
-        <Tooltip placement="left" title={`${props.item.teamSize} Entwickler`}>
+        <Tooltip placement="left" title={t("team-size-label", { teamSize }).toString()}>
           {icon}
         </Tooltip>
       );
