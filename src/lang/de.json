@@ -85,5 +85,9 @@
   "intel-real-sense": "Intel Real Sense",
   "web-socket": "WebSocket",
   "rabbit-mq": "RabbitMQ",
-  "team-size-label": "{{teamSize}} Entwickler"
+  "team-size-label": "{{teamSize}} Entwickler",
+  "wrong-language": "Wrong language?",
+  "change-language": "Change",
+  "other-language": "en",
+  "language": "Sprache"
 }

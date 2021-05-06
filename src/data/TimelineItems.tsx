@@ -349,9 +349,10 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "",
+      title: "Material UI",
       caption: `04/2021 - ${nowString}`,
-      content: "",
+      content:
+        "Nachdem ich MaterialUI bereits für viele private und berufliche Projekte eingesetzt habe, wollte ich mich an der Weiterentwicklung beteiligen. Hierzu habe ich meinen ersten PR auf GitHub erstellt und weitere UI Beispiele für Switch Komponenten erstellt bzw. angepasst.",
       type: "Private",
       skills: [skillTypeScript, skillJavaScript, skillReact, skillGit],
       teamSize: 2171,

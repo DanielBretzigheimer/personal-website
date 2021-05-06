@@ -12,7 +12,8 @@ import "./App.scss";
 import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";
-import Footer from "./components/footer/footer";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import AppFooter from "./components/footer/AppFooter";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -36,8 +37,9 @@ export default function App() {
         <TimelineOverview />
         <Certificates />
         <InterestOverview />
-        <Footer />
+        <AppFooter />
       </Container>
+      <LanguageSwitcher />
     </ThemeProvider>
   );
 }
