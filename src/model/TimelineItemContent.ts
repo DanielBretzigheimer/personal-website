@@ -4,9 +4,9 @@ import Skill from "./Skill";
 export const maxTeamSizeValue = 10;
 
 export default interface TimelineItemContent {
-  title: string;
+  key: string;
   caption?: string;
-  content?: string | ReactNode;
+  content?: { readonly [tagName: string]: React.ReactNode };
   type: "Education" | "Private" | "Work";
   skills?: Array<Skill>;
   teamSize?: number;

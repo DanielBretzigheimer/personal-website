@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, Chip, Tooltip, Typography } from "@material-ui/core";
 import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi-material-ui";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
 import TimelineItemContent, { maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
@@ -13,18 +13,6 @@ interface TimelineCardProps {
 
 export default function TimelineCard(props: TimelineCardProps) {
   const { t } = useTranslation();
-
-  function getContent() {
-    if (typeof props.item.content === "string") {
-      return (
-        <Box whiteSpace="pre-line">
-          <Typography>{props.item.content}</Typography>
-        </Box>
-      );
-    }
-
-    return props.item.content;
-  }
 
   function getKeywords() {
     const skills = props.item.skills;
@@ -70,14 +58,16 @@ export default function TimelineCard(props: TimelineCardProps) {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h6">{props.item.title}</Typography>
+        <Typography variant="h6">{t(props.item.key)}</Typography>
         <Box display="flex" alignItems="center">
           <Box flexGrow="1">
             <Typography variant="caption">{props.item.caption}</Typography>
           </Box>
           {getTeamSize()}
         </Box>
-        {getContent()}
+        <Box whiteSpace="pre-line">
+          <Trans i18nKey={`${props.item.key}-content`} components={props.item.content} />
+        </Box>
         {getKeywords()}
       </CardContent>
     </Card>

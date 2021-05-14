@@ -8,8 +8,10 @@ import Skill from "../../model/Skill";
 import TimelineFilterHeader from "./TimelineHeader";
 import TimelineFilter from "../../model/TimelineFilter";
 import Filter from "../../services/FilterService";
+import { useTranslation } from "react-i18next";
 
 export default function TimelineOverview() {
+  const { t } = useTranslation();
   const [timelineItems, setTimelineItems] = useState(TimelineItems());
   const [filters, setFilters] = useState(new Array<TimelineFilter>());
 
@@ -60,7 +62,7 @@ export default function TimelineOverview() {
         </>
       ) : (
         <Typography>
-          <span>Keine Einträge für diese Filter gefunden. </span>
+          <span>{t("no-timeline-items")}</span>
           <span role="img" aria-label="Trauriger Smiley">
             😥
           </span>

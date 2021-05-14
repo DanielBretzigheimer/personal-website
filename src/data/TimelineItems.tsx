@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Typography } from "@material-ui/core";
+import { Link } from "@material-ui/core";
 import TimelineItemContent from "../model/TimelineItemContent";
 import {
   skillAndroidOperationSystem as skillAndroidOperatingSystem,
@@ -51,22 +51,18 @@ export default function TimelineItems(): Array<TimelineItemContent> {
 
   return [
     {
-      title: "Schulische Ausbildung",
+      key: "education-school",
       caption: "09/2002 - 07/2012",
-      content: "Johannes-Obernburger-Volksschule\nMain-Limes-Realschule\nAbschluss: Mittlere Reife",
       type: "Education",
     },
     {
-      title: "Berufsausbildung",
+      key: "education-vocational-training",
       caption: "09/2012 - 07/2015",
-      content: "Ausbildung als Fachinformatiker Anwendungsentwicklung bei APE Engineering GmbH",
       type: "Education",
     },
     {
-      title: "Maschinensteuerungssoftware",
+      key: "machine-control-software",
       caption: "2013 - 2015",
-      content:
-        "Software zur Auswertung und Konfiguration von Garnreinigungsmaschinen mit Komunikation über eine BUS Schnittstelle.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -79,10 +75,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 6,
     },
     {
-      title: "Windows Service Entwicklung",
+      key: "windows-service-development",
       caption: "2014",
-      content:
-        "Windows Service zur Erstellung von XML Dateien, die mithilfe der Variablen eines OPC UA Servers gefüllt werden. Die XML Dateien werden anschließend anhand einer XSD Datei auf Fehler geprüft und auf dem Dateisystem abgelegt.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -96,10 +90,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "Datenbank Versionsverwaltung",
+      key: "database-version-management",
       caption: "2015",
-      content:
-        "Software die PostgreSQL Datenbank Unterschiede zwischen einer vorherigen Version und der aktuellen Datenbank als Änderungs SQL-Dateien ablegt.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -114,10 +106,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "Betriebsdatenerfassung",
+      key: "production-data-acquisition",
       caption: "2015 - 2019",
-      content:
-        "Betriebsdatenerfassung im Client/Server Prinzip mit REST Schnittstelle inklusive Berichte, Trends, Live-Monitoring, Produktionsplanung und der Verwaltung von Maschineneinstellungen.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -132,10 +122,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 8,
     },
     {
-      title: "Maschinen Übersicht",
+      key: "machine-overview",
       caption: "2016 - 2017",
-      content:
-        "Software zur Anzeige aller Maschinen einer Fabrik als Webanwendung und integriert in Betriebsdatenerfassung. Maschinen können per drag and drop auf der Übersicht plaziert werden und zeigen die aktuellen Produktionsdaten.",
       type: "Work",
       skills: [
         skillJava,
@@ -152,28 +140,19 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "Github Pull Request für CefSharp",
+      key: "github-cef-sharp",
       caption: "2018",
-      content: (
-        <Typography>
-          Mein erster Beitrag zu einem Open Source{" "}
-          <Link href="https://github.com/cefsharp/CefSharp">Projekt</Link> auf Github. Hierbei hatte
-          ich zuvor einen Bug gefunden und ein entsprechendes{" "}
-          <Link href="https://github.com/cefsharp/CefSharp/issues/1849">Issue</Link> ohne Lösung
-          gefunden. Nach kurzer Untersuchung war der Fehler schnell gefunden und konnte behoben
-          werden. Der{" "}
-          <Link href="https://github.com/cefsharp/CefSharp/pull/2232">Pull Request</Link> wurde
-          anschließend vom Maintainer in den Hauptbranch integriert.
-        </Typography>
-      ),
+      content: {
+        1: <Link href="https://github.com/cefsharp/CefSharp" />,
+        2: <Link href="https://github.com/cefsharp/CefSharp/issues/1849" />,
+        3: <Link href="https://github.com/cefsharp/CefSharp/pull/2232" />,
+      },
       skills: [skillCsharp, skillCPlusPlus, skillVisualStudio, skillGit],
       type: "Private",
     },
     {
-      title: "Update Verwaltungssoftware",
+      key: "update-management-software",
       caption: "2018",
-      content:
-        "Die Software dient sowohl als Auslieferungsserver von Software Updates für die Betriebsdatenerfassungs Software, als auch als zentrale Anlaufstelle für Telemetrie Daten. Die Webanwendung erlaubt das hochladen von Software Updates und die individuelle Zuweisung an Kunden. Zusätzlich können die gesammelten Telemetriedaten angezeigt und grafische ausgewertet werden.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -194,10 +173,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 2,
     },
     {
-      title: "Order Management System",
+      key: "order-management-system",
       caption: "2018 - 2021",
-      content:
-        "Bestellungsverwaltungssystem für interne Bestellungen als Webanwendung mit REST Schnittstelle und PostgreSQL Datenbank.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -217,26 +194,20 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 2,
     },
     {
-      title: "Microsoft Certified Professional Prüfung",
+      key: "microsoft-certified-professional-exam",
       caption: "03/2019",
-      content:
-        'Im März 2019 habe ich erfolgreich die MCP Prüfung 483 "Programming in C#" abgeschlossen.',
       type: "Education",
     },
     {
-      title: "Automatische UI Tests",
+      key: "automatic-ui-tests",
       caption: "2020",
-      content:
-        "Erstellung von automatischen UI Tests für das Order Management System mit Selenium. Die Tests werden automatisch nach dem Build Vorgang ausgeführt und prüfen die Grundfunktionen der Anwendung.",
       type: "Work",
       skills: [skillCsharp, skillNetCore, skillVisualStudio, skillGit, skillSelenium],
       teamSize: 2,
     },
     {
-      title: "Datenanalyse und Benutzerverwaltungs Anwendung",
+      key: "data-analysis-and-user-administration",
       caption: "2020",
-      content:
-        "Erstellung einer Webanwendung zur Anzeige von Berichten und Verwaltung von Benutzern.",
       type: "Work",
       skills: [
         skillCsharp,
@@ -254,17 +225,13 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "Unterstützung bei der Ausbildung der Azubis",
+      key: "support-vocational-training",
       caption: "2020",
-      content:
-        "Zusätzlich zu meinem normalen Arbeitsalltag, helfe ich seit mitte 2020 bei der Ausbildung der Azubis mit. Hierzu gehört unter anderem das Erstellen von Aufgaben und die Beantwortung von Fragen.",
       type: "Work",
     },
     {
-      title: "Fitnessspiel Anwendung",
+      key: "fitness-game",
       caption: "2020",
-      content:
-        "Entwicklung einer Anwendung bei der mit einem Beamer ein Spielfeld an eine Wand projeziert wird und der Spieler sich darauf befindlichen Objekten ausweichen bzw. diese fangen muss. Die Steuerung der Anwendung erfolgt über eine React App mit einer Websocket Verbindung.",
       type: "Work",
       skills: [
         skillPython,
@@ -280,19 +247,15 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 4,
     },
     {
-      title: "Video Player Anwendung",
+      key: "video-player-application",
       caption: "2020",
-      content:
-        "Entwicklung einer Software zum Anzeigen von Videos auf einem Beamer, die über eine RabbitMQ Nachricht empfangen werden.",
       type: "Work",
       skills: [skillPython, skillVisualStudioCode, skillRabbitMq, skillLinux],
       teamSize: 2,
     },
     {
-      title: "Browsergame Entwicklung",
+      key: "browser-game-development",
       caption: `03/2020 - ${nowString}`,
-      content:
-        "Seit März 2020 gehöre ich dem ehrenamtlichen Entwicklerteam des Browsergames Hidden Empire Galaxy Adventures an. Hier wurde ich mit dem erstellen der nächsten Version (V5) beauftragt, die für das Jahr 2023 geplant ist.",
       type: "Private",
       skills: [
         skillTypeScript,
@@ -306,10 +269,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 3,
     },
     {
-      title: "Webanwendung zur Assetverwaltung",
+      key: "asset-management-application",
       caption: `12/2020 - ${nowString}`,
-      content:
-        "Unterstützung für die Weiterentwicklung einer AngularJS Web-App zur Assetverwaltung. Entwicklung von erweiterten Tabellen Funktionen wie eine Spaltenkonfiguration und Bearbeitungsmodus (Datagrid).",
       type: "Work",
       skills: [
         skillJavaScript,
@@ -327,15 +288,13 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 5,
     },
     {
-      title: "Compliance Schulung",
+      key: "compliance-training",
       caption: "02/2021",
       type: "Education",
     },
     {
-      title: "Persönliche Webseite",
+      key: "personal-website",
       caption: `03/2021 - ${nowString}`,
-      content:
-        "Als kleines Übungsprojekt für React gestartet, ist diese Webseite entstanden. Zusätzlich benutze ich diese Website um neue Web Technologien auszutesten.",
       type: "Private",
       skills: [
         skillTypeScript,
@@ -349,10 +308,8 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      title: "Material UI",
+      key: "github-material-ui",
       caption: `04/2021 - ${nowString}`,
-      content:
-        "Nachdem ich MaterialUI bereits für viele private und berufliche Projekte eingesetzt habe, wollte ich mich an der Weiterentwicklung beteiligen. Hierzu habe ich meinen ersten PR auf GitHub erstellt und weitere UI Beispiele für Switch Komponenten erstellt bzw. angepasst.",
       type: "Private",
       skills: [skillTypeScript, skillJavaScript, skillReact, skillGit],
       teamSize: 2171,
