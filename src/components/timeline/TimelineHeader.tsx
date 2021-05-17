@@ -60,7 +60,7 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
       <Box display="flex" alignItems="baseline">
         <Box flexGrow={1}>
           <CategoryHeader>
-            <ResumeIcon fontSize="large" color="secondary" />
+            <ResumeIcon fontSize="large" />
             {t("curriculum-vitae")}
           </CategoryHeader>
         </Box>

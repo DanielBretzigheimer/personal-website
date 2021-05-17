@@ -19,7 +19,7 @@ export default function Skills(props: SkillsProps) {
   return (
     <Box>
       <CategoryHeader>
-        <TuneVertical fontSize="large" color="secondary" /> {t("skills")}
+        <TuneVertical fontSize="large" /> {t("skills")}
       </CategoryHeader>
       <Card>
         <Box marginTop={2}>

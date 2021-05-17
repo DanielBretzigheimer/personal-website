@@ -12,7 +12,6 @@ export default function Footer() {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" marginTop={1}>
-      <Typography variant="caption">© {new Date().getFullYear()} Daniel Bretzigheimer</Typography>
       <Box>
         <Typography component="span">{t("language")}</Typography>
         {": "}
@@ -24,6 +23,7 @@ export default function Footer() {
           EN
         </Link>
       </Box>
+      <Typography variant="caption">© {new Date().getFullYear()} · Daniel Bretzigheimer</Typography>
       <Imprint />
     </Box>
   );
