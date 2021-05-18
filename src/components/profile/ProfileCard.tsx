@@ -94,7 +94,15 @@ export default function ProfileCard() {
         <Divider />
         <CardContent>
           <Typography variant="h5">{t("about-me")}</Typography>
-          <Typography>{t("about-me-content")}</Typography>
+          <Typography>
+            <Trans
+              i18nKey="about-me-content"
+              components={{
+                1: <Link href="https://material.io/design" />,
+                2: <Link href="#test" />,
+              }}
+            />
+          </Typography>
           <Box>
             <Tooltip title={t("github").toString()}>
               <Link href="https://github.com/DanielBretzigheimer">

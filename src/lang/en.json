@@ -9,7 +9,7 @@
   "birthdate": "Date of birth",
   "germany": "Germany",
   "welcome-content": "Welcome on my personal website. Here I want to introduce myself and my skills. Additionally this site is used as example application. The source code can be publicly viewed <1>here</1>.",
-  "about-me-content": "My name is Daniel Bretzigheimer and I am software developer near Frankfurt am Main. My passion is the frontend development, but I'm also experienced in the creation of backends, including the querying of data from a database.",
+  "about-me-content": "Hey! I am a software developer near Frankfurt, Germany. My passion is the frontend development, but I also have experience in the creation of backends and with database systems. I'm a big fan of <1>Material Design</1> and I'm helping with the development of <2>Material UI</2>.",
   "skills": "Skills",
   "programming-languages": "Programming Languages",
   "frameworks": "Frameworks",

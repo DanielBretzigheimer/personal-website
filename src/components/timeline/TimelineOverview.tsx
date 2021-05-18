@@ -53,7 +53,7 @@ export default function TimelineOverview() {
       />
       {timelineItems.length > 0 ? (
         <>
-          <Hidden mdDown>
+          <Hidden smDown>
             <DesktopTimeline items={timelineItems} filters={filters} />
           </Hidden>
           <Hidden mdUp>
