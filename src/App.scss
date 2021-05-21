@@ -1,3 +1,15 @@
 .main-content {
   padding: 1rem 0;
 }
+
+@keyframes pulsate {
+  0% {
+    filter: contrast(1);
+  }
+  50% {
+    filter: contrast(0.7);
+  }
+  100% {
+    filter: contrast(1);
+  }
+}

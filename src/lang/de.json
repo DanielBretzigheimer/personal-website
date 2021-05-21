@@ -24,8 +24,8 @@
   "java": "Java",
   "python": "Python",
   "android": "Android (Java)",
-  "net-core": ".NET Core",
-  "asp-net-core": "ASP.NET Core",
+  "dotnet": ".NET",
+  "asp-dotnet-core": "ASP.NET Core",
   "react": "React",
   "angular-js": "AngularJS",
   "angular": "Angular",
@@ -131,5 +131,10 @@
   "personal-website-content": "Als kleines Übungsprojekt für React gestartet, ist diese Webseite entstanden. Zusätzlich benutze ich diese Website um neue Web Technologien auszutesten.",
   "github-material-ui": "Material UI",
   "github-material-ui-content": "Nachdem ich MaterialUI bereits für viele private und berufliche Projekte eingesetzt habe, wollte ich mich an der Weiterentwicklung beteiligen. Hierzu habe ich meinen ersten PR auf GitHub erstellt und weitere UI Beispiele für Switch Komponenten erstellt bzw. angepasst.",
-  "no-timeline-items": "Keine Einträge für diese Filter gefunden."
+  "no-timeline-items": "Keine Einträge für diese Filter gefunden.",
+  "mdx": "MDX",
+  "gatsby": "Gatsby",
+  "arma-website": "Homepage für einen Gaming Klan",
+  "arma-website-content": "Der ARMA Clan \"Aufklärungsbataillon 178\" hatte mich gefragt, ob es mögliche wäre eine Homepage für sie zu Erstellen. Ohne genau vorgaben der UI, habe ich mich an der offiziellen ARMA Seite ausgerichtet. Da ich bis jetzt noch keine Erfahrung mit Gatsby hatte, aber bereits viel davon hörte, habe ich mich entschieden es in diesem Projekt auszuprobieren. Zusätzlich sollte der Inhalt von Personen geschrieben werden können, die keine Erfahrung in der Softwareentwicklung haben. Deshalb habe ich mich dafür entschieden diesen in MDX Dateien zu verwalten. Die Seite ist <1>hier</1> zu finden. Der Quellcode ist öffentlich und kann <2>hier</2> eingesehen werden.",
+  "sq-lite": "SQLite"
 }

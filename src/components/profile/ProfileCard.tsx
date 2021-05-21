@@ -11,6 +11,8 @@ import {
   Typography,
   Link,
   Tooltip,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import React from "react";
 import MailIcon from "mdi-material-ui/EmailOutline";
@@ -23,18 +25,41 @@ import { Github, Gitlab, StackOverflow } from "mdi-material-ui";
 import { Trans, useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
-  large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-  },
   titleName: {
     hyphens: "manual",
+  },
+  profileContentMobile: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    [`& .profile-picture`]: {
+      width: theme.spacing(7),
+      height: theme.spacing(7),
+    },
+    [`& .profile-name`]: {
+      marginLeft: theme.spacing(2),
+    },
+  },
+  profileContentDesktop: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    [`& .profile-picture`]: {
+      width: theme.spacing(14),
+      height: theme.spacing(14),
+    },
+    [`& .profile-name`]: {
+      textAlign: "center",
+    },
   },
 }));
 
 export default function ProfileCard() {
   const classes = useStyles();
   const { t } = useTranslation();
+  const theme = useTheme();
+  const isUpSm = useMediaQuery(() => theme.breakpoints.up("sm"));
+
   const profileInfoLines = [
     {
       label: t("mail"),
@@ -45,8 +70,8 @@ export default function ProfileCard() {
     {
       label: t("website"),
       icon: <WebsiteIcon />,
-      text: "https://daniel-bretzigheimer.dev",
-      link: "https://daniel-bretzigheimer.netlify.app/",
+      text: "https://www.daniel-bretzigheimer.dev",
+      link: "https://www.daniel-bretzigheimer.dev",
     },
     {
       label: t("phone"),
@@ -70,9 +95,9 @@ export default function ProfileCard() {
     <>
       <Card>
         <CardContent>
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Avatar src={ProfilePicture} className={classes.large} />
-            <Box marginLeft={2}>
+          <Box className={isUpSm ? classes.profileContentDesktop : classes.profileContentMobile}>
+            <Avatar src={ProfilePicture} className="profile-picture" />
+            <Box className="profile-name">
               <Typography variant="h4" className={classes.titleName}>
                 Daniel Bretzigheimer
               </Typography>
@@ -99,7 +124,7 @@ export default function ProfileCard() {
               i18nKey="about-me-content"
               components={{
                 1: <Link href="https://material.io/design" />,
-                2: <Link href="#test" />,
+                2: <Link href="#project-material-ui" />,
               }}
             />
           </Typography>
