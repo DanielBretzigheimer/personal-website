@@ -125,6 +125,7 @@ export default function ProfileCard() {
               components={{
                 1: <Link href="https://material.io/design" />,
                 2: <Link href="#project-material-ui" />,
+                3: <Link href="https://www.hiddenempire.de/" />,
               }}
             />
           </Typography>

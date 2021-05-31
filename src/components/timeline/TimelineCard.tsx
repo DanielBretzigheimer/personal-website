@@ -3,7 +3,7 @@ import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
-import TimelineItemContent, { maxTeamSizeValue } from "../../model/TimelineItemContent";
+import { TimelineItemContent, maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
 
 const useStyle = makeStyles(() => ({

@@ -1,6 +1,6 @@
 import { TimelineConnector, TimelineDot, TimelineSeparator } from "@material-ui/lab";
 import React from "react";
-import TimelineItemContent from "../../model/TimelineItemContent";
+import { TimelineItemContent } from "../../model/TimelineItemContent";
 import EducationIcon from "mdi-material-ui/SchoolOutline";
 import ProjectIcon from "mdi-material-ui/StarOutline";
 import { Tooltip } from "@material-ui/core";

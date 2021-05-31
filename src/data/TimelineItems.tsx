@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@material-ui/core";
-import TimelineItemContent from "../model/TimelineItemContent";
+import { TimelineItemContent } from "../model/TimelineItemContent";
 import {
   skillAndroidOperationSystem as skillAndroidOperatingSystem,
   skillAngularJs,

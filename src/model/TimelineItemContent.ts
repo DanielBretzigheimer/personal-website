@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
+import React from "react";
 import Skill from "./Skill";
 
 export const maxTeamSizeValue = 10;
 
-export default interface TimelineItemContent {
+export interface TimelineItemContent {
   id?: string;
   key: string;
   caption?: string;
-  content?: { readonly [tagName: string]: React.ReactNode };
+  content?: { [tagName: string]: React.ReactNode };
   type: "Education" | "Private" | "Work";
   skills?: Array<Skill>;
   teamSize?: number;

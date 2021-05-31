@@ -1,5 +1,5 @@
 import TimelineFilter from "../model/TimelineFilter";
-import TimelineItemContent from "../model/TimelineItemContent";
+import { TimelineItemContent } from "../model/TimelineItemContent";
 
 export default function Filter(item: TimelineItemContent, filters: Array<TimelineFilter>) {
   if (filters.length === 0) return true;
