@@ -95,6 +95,9 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "database-version-management",
       caption: "2015",
       type: "Work",
+      content: {
+        1: <Link href="#production-data-acquisition" />,
+      },
       skills: [
         skillCsharp,
         skillSql,
@@ -111,6 +114,9 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "production-data-acquisition",
       caption: "2015 - 2019",
       type: "Work",
+      content: {
+        1: <Link href="#machine-control-software" />,
+      },
       skills: [
         skillCsharp,
         skillSql,
@@ -302,7 +308,6 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 1,
     },
     {
-      id: "project-material-ui",
       key: "github-material-ui",
       caption: `04/2021 - ${nowString}`,
       type: "Private",

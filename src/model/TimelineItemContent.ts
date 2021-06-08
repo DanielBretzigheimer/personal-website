@@ -4,7 +4,6 @@ import Skill from "./Skill";
 export const maxTeamSizeValue = 10;
 
 export interface TimelineItemContent {
-  id?: string;
   key: string;
   caption?: string;
   content?: { [tagName: string]: React.ReactNode };

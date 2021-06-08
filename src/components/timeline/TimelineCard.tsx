@@ -65,7 +65,7 @@ export default function TimelineCard(props: TimelineCardProps) {
   }
 
   return (
-    <Card id={props.item.id} className={classes.card}>
+    <Card id={props.item.key} className={classes.card}>
       <CardContent>
         <Typography variant="h6">{t(props.item.key)}</Typography>
         <Box display="flex" alignItems="center">
