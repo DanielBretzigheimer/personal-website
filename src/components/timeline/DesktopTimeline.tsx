@@ -20,9 +20,12 @@ export default function DesktopTimeline(props: TimelineProps) {
       {props.items.map((item, index) => {
         const isLast = index === props.items.length - 1;
         return (
-          <TimelineItem key={index}>
+          <TimelineItem key={index} style={{ pointerEvents: "none" }}>
             <Seperator isLast={isLast} item={item} />
-            <TimelineContent className={isLast ? "" : classes.timelineContent}>
+            <TimelineContent
+              style={{ pointerEvents: "all" }}
+              className={isLast ? "" : classes.timelineContent}
+            >
               <TimelineCard item={item} activeFilters={props.filters} />
             </TimelineContent>
           </TimelineItem>

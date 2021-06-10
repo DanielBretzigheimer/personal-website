@@ -133,6 +133,10 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "machine-overview",
       caption: "2016 - 2017",
       type: "Work",
+      content: {
+        1: <Link href="#production-data-acquisition" />,
+        2: <Link href={skillGwt.website} />,
+      },
       skills: [
         skillJava,
         skillJavaScript,
@@ -157,6 +161,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       },
       skills: [skillCsharp, skillCPlusPlus, skillVisualStudio, skillGit],
       type: "Private",
+      teamSize: 1,
     },
     {
       key: "update-management-software",

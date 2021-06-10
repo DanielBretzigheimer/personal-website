@@ -32,7 +32,15 @@ export default function TimelineCard(props: TimelineCardProps) {
             const color = props.activeFilters.map((f) => f.value).includes(skill.name)
               ? "secondary"
               : "default";
-            return <Chip key={i} variant="outlined" color={color} label={t(skill.name)} />;
+            return (
+              <Chip
+                key={i}
+                variant="outlined"
+                color={color}
+                label={t(skill.name)}
+                onClick={() => window.open(skill.website, "_blank")}
+              />
+            );
           })}
         </ChipCollection>
       );
