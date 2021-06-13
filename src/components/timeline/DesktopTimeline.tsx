@@ -15,6 +15,10 @@ const useStyle = makeStyles(() => ({
 
 export default function DesktopTimeline(props: TimelineProps) {
   const classes = useStyle();
+
+  /**
+   * Pointer Events have to be disabled for the timeline item to allow click through the margin. :(
+   */
   return (
     <Timeline align="alternate">
       {props.items.map((item, index) => {

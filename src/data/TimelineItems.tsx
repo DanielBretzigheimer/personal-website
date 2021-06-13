@@ -167,6 +167,9 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "update-management-software",
       caption: "2018",
       type: "Work",
+      content: {
+        1: <Link href="#production-data-acquisition" />,
+      },
       skills: [
         skillCsharp,
         skillSql,
@@ -215,6 +218,9 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "automatic-ui-tests",
       caption: "2020",
       type: "Work",
+      content: {
+        1: <Link href="#order-management-system" />,
+      },
       skills: [skillCsharp, skillNetCore, skillVisualStudio, skillGit, skillSelenium],
       teamSize: 2,
     },
