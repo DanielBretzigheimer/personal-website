@@ -5,12 +5,10 @@ import {
   CardContent,
   Divider,
   Grid,
-  IconButton,
   InputLabel,
   makeStyles,
   Typography,
   Link,
-  Tooltip,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
@@ -21,8 +19,8 @@ import PhoneIcon from "mdi-material-ui/PhoneOutline";
 import LocationIcon from "mdi-material-ui/MapMarkerOutline";
 import BirthIcon from "mdi-material-ui/CalendarOutline";
 import ProfilePicture from "../../images/Profile_Picture.jpg";
-import { Github, Gitlab, StackOverflow } from "mdi-material-ui";
 import { Trans, useTranslation } from "react-i18next";
+import ProfileLinks from "./ProfileLinks";
 
 const useStyles = makeStyles((theme) => ({
   titleName: {
@@ -129,29 +127,7 @@ export default function ProfileCard() {
               }}
             />
           </Typography>
-          <Box>
-            <Tooltip title={t("github").toString()}>
-              <Link href="https://github.com/DanielBretzigheimer">
-                <IconButton>
-                  <Github />
-                </IconButton>
-              </Link>
-            </Tooltip>
-            <Tooltip title={t("gitlab").toString()}>
-              <Link href="https://gitlab.com/dbretzigheimer95">
-                <IconButton>
-                  <Gitlab />
-                </IconButton>
-              </Link>
-            </Tooltip>
-            <Tooltip title={t("stack-overflow").toString()}>
-              <Link href="https://stackoverflow.com/users/2119579/daniel-bretzigheimer">
-                <IconButton>
-                  <StackOverflow />
-                </IconButton>
-              </Link>
-            </Tooltip>
-          </Box>
+          <ProfileLinks />
         </CardContent>
         <Divider />
         <CardContent>
