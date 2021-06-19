@@ -249,6 +249,13 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       type: "Work",
     },
     {
+      key: "video-player-application",
+      caption: "2020",
+      type: "Work",
+      skills: [skillPython, skillVisualStudioCode, skillRabbitMq, skillLinux],
+      teamSize: 2,
+    },
+    {
       key: "fitness-game",
       caption: "2020",
       type: "Work",
@@ -263,13 +270,6 @@ export default function TimelineItems(): Array<TimelineItemContent> {
         skillWebsocket,
         skillLinux,
       ],
-      teamSize: 4,
-    },
-    {
-      key: "video-player-application",
-      caption: "2020",
-      type: "Work",
-      skills: [skillPython, skillVisualStudioCode, skillRabbitMq, skillLinux],
       teamSize: 2,
     },
     {
@@ -315,6 +315,9 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "personal-website",
       caption: `03/2021 - ${nowString}`,
       type: "Private",
+      content: {
+        1: <Link href="https://gitlab.com/dbretzigheimer95/personal-website" />,
+      },
       skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillScss],
       teamSize: 1,
     },
