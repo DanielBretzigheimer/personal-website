@@ -105,17 +105,6 @@ export default function ProfileCard() {
         </CardContent>
         <Divider />
         <CardContent>
-          <Typography>
-            <Trans
-              i18nKey="welcome-content"
-              components={{
-                1: <Link href="https://gitlab.com/dbretzigheimer95/personal-website" />,
-              }}
-            />
-          </Typography>
-        </CardContent>
-        <Divider />
-        <CardContent>
           <Typography variant="h5">{t("about-me")}</Typography>
           <Typography>
             <Trans

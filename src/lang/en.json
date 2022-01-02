@@ -8,7 +8,6 @@
   "address": "Address",
   "birthdate": "Date of birth",
   "germany": "Germany",
-  "welcome-content": "Welcome on my personal website. Here I want to introduce myself and my skills. Additionally this site is used as example application. The source code can be publicly viewed <1>here</1>.",
   "about-me-content": "I am a software developer based near Frankfurt am Main. Started as a full stack developer for Windows applications with WPF, over time I have increasingly focused on web development. My great passion is frontend development, but in my career so far I have also gained experience in backend creation and with databases. I'm a big fan of <1>Material Design</1> and have been involved since 2021 in the development of the open source project <2>Material UI</2>, which provides material design components for React. In addition to my professional activity, I also work on a voluntary basis on the Star Wars fan project <3>Hidden Empire Galaxy Adventures</3> as a frontend developer.",
   "skills": "Skills",
   "programming-languages": "Programming Languages",
