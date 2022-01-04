@@ -3,6 +3,7 @@ import { Link } from "@mui/material";
 import { TimelineItemContent } from "../model/TimelineItemContent";
 import {
   skillAndroidOperationSystem as skillAndroidOperatingSystem,
+  skillAngular,
   skillAngularJs,
   skillAspNetCore,
   skillCPlusPlus,
@@ -289,7 +290,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "asset-management-application",
-      caption: `12/2020 - ${nowString}`,
+      caption: `12/2020 - 09/2021`,
       type: "Work",
       skills: [
         skillJavaScript,
@@ -347,6 +348,36 @@ export default function TimelineItems(): Array<TimelineItemContent> {
         skillScss,
       ],
       teamSize: 1,
+    },
+    {
+      key: "python-hardware-control-application",
+      caption: `09/2021 - ${nowString}`, // 02/2022
+      type: "Work",
+      skills: [skillPython, skillVisualStudioCode, skillGit],
+      teamSize: 2,
+    },
+    {
+      key: "angular-label-layout-generator",
+      caption: `11/2021 - 12/2021`,
+      type: "Work",
+      skills: [
+        skillTypeScript,
+        skillAngular,
+        skillVisualStudioCode,
+        skillGit,
+        skillHtml,
+        skillScss,
+        skillWpf,
+        skillWindows,
+      ],
+      teamSize: 3,
+    },
+    {
+      key: "react-dashboard-reporting-application",
+      caption: `01/2022 - ${nowString}`, // 05/2022
+      type: "Work",
+      skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillScss],
+      teamSize: 2,
     },
   ];
 }
