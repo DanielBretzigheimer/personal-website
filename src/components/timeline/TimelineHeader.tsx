@@ -1,4 +1,4 @@
-import { Box, Chip, Drawer, IconButton, makeStyles, Typography } from "@material-ui/core";
+import { Box, Chip, Drawer, IconButton, Typography } from "@mui/material";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
 import ResumeIcon from "mdi-material-ui/FileAccountOutline";
@@ -16,14 +16,7 @@ interface TimelineHeaderProps {
   addFilter: (filter: TimelineFilter) => void;
 }
 
-const useStyle = makeStyles(() => ({
-  drawer: {
-    maxWidth: "500px",
-  },
-}));
-
 export default function TimelineFilterHeader(props: TimelineHeaderProps) {
-  const classes = useStyle();
   const { t } = useTranslation();
   const [filtersDrawerOpen, setFiltersDrawerOpen] = useState(false);
 
@@ -64,12 +57,14 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
             {t("curriculum-vitae")}
           </CategoryHeader>
         </Box>
-        <IconButton onClick={() => setFiltersDrawerOpen(true)}>
+        <IconButton onClick={() => setFiltersDrawerOpen(true)} size="large">
           <FilterOutline />
         </IconButton>
       </Box>
       <Drawer
-        className={classes.drawer}
+        sx={{
+          maxWidth: "500px",
+        }}
         open={filtersDrawerOpen}
         onClose={() => setFiltersDrawerOpen(false)}
         anchor="right"

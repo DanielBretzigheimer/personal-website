@@ -1,4 +1,4 @@
-import { Box, Card, Grid } from "@material-ui/core";
+import { Box, Card, Grid } from "@mui/material";
 import { TuneVertical } from "mdi-material-ui";
 import React from "react";
 import { useTranslation } from "react-i18next";

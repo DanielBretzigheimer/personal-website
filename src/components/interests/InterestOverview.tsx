@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Link, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, Grid, Link, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 import CategoryHeader from "../CategoryHeader";
 import HeartIcon from "mdi-material-ui/Heart";

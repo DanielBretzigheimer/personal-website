@@ -7,14 +7,14 @@ import {
   Link,
   useMediaQuery,
   useTheme,
-} from "@material-ui/core";
+} from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Imprint() {
   const { t } = useTranslation();
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const [open, setOpen] = useState(false);
 

@@ -1,18 +1,7 @@
-import { Box, ButtonBase, LinearProgress, makeStyles, Typography } from "@material-ui/core";
+import { Box, ButtonBase, LinearProgress, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Skill from "../../model/Skill";
-
-const useStyle = makeStyles(() => ({
-  progressBar: {
-    borderRadius: 5,
-    height: 10,
-  },
-  skillButton: {
-    width: "100%",
-    textAlign: "unset",
-  },
-}));
 
 export interface SkillLineProps {
   skill: Skill;
@@ -20,11 +9,13 @@ export interface SkillLineProps {
 }
 
 export default function SkillLine(props: SkillLineProps) {
-  const classes = useStyle();
   const { t } = useTranslation();
 
   return (
-    <ButtonBase className={classes.skillButton} onClick={() => props.onClick(props.skill)}>
+    <ButtonBase
+      sx={{ width: "100%", textAlign: "unset" }}
+      onClick={() => props.onClick(props.skill)}
+    >
       <Box margin={1.5} width="100%">
         <Box display="flex">
           <Box flexGrow={1}>
@@ -35,7 +26,7 @@ export default function SkillLine(props: SkillLineProps) {
         <LinearProgress
           variant="determinate"
           value={props.skill.value}
-          className={classes.progressBar}
+          sx={{ borderRadius: 5, height: 10 }}
         />
       </Box>
     </ButtonBase>

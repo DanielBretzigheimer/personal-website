@@ -16,7 +16,6 @@
         }
       },
       "label": "Start Dev Server",
-      "detail": "react-scripts start",
       "isBackground": true
     },
     {

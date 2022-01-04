@@ -6,12 +6,11 @@ import {
   Divider,
   Grid,
   InputLabel,
-  makeStyles,
   Typography,
   Link,
   useMediaQuery,
   useTheme,
-} from "@material-ui/core";
+} from "@mui/material";
 import React from "react";
 import MailIcon from "mdi-material-ui/EmailOutline";
 import WebsiteIcon from "mdi-material-ui/Earth";
@@ -22,41 +21,10 @@ import ProfilePicture from "../../images/Profile_Picture.jpg";
 import { Trans, useTranslation } from "react-i18next";
 import ProfileLinks from "./ProfileLinks";
 
-const useStyles = makeStyles((theme) => ({
-  titleName: {
-    hyphens: "manual",
-  },
-  profileContentMobile: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    [`& .profile-picture`]: {
-      width: theme.spacing(7),
-      height: theme.spacing(7),
-    },
-    [`& .profile-name`]: {
-      marginLeft: theme.spacing(2),
-    },
-  },
-  profileContentDesktop: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    [`& .profile-picture`]: {
-      width: theme.spacing(14),
-      height: theme.spacing(14),
-    },
-    [`& .profile-name`]: {
-      textAlign: "center",
-    },
-  },
-}));
-
 export default function ProfileCard() {
-  const classes = useStyles();
   const { t } = useTranslation();
   const theme = useTheme();
-  const isUpSm = useMediaQuery(() => theme.breakpoints.up("sm"));
+  const isMobile = useMediaQuery(() => theme.breakpoints.down("md"));
 
   const profileInfoLines = [
     {
@@ -93,10 +61,26 @@ export default function ProfileCard() {
     <>
       <Card>
         <CardContent>
-          <Box className={isUpSm ? classes.profileContentDesktop : classes.profileContentMobile}>
-            <Avatar src={ProfilePicture} className="profile-picture" />
-            <Box className="profile-name">
-              <Typography variant="h4" className={classes.titleName}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: isMobile ? "row" : "column",
+            }}
+          >
+            <Avatar
+              src={ProfilePicture}
+              className="profile-picture"
+              sx={{
+                width: theme.spacing(isMobile ? 7 : 14),
+                height: theme.spacing(isMobile ? 7 : 14),
+              }}
+            />
+            <Box
+              className="profile-name"
+              sx={isMobile ? { marginLeft: theme.spacing(2) } : { textAlign: "center" }}
+            >
+              <Typography sx={{ hyphens: "manual" }} variant="h4">
                 Daniel Bretzigheimer
               </Typography>
               <Typography variant="subtitle1">Frontend Developer</Typography>

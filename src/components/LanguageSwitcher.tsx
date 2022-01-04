@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, IconButton, Snackbar } from "@material-ui/core";
+import { Button, IconButton, Snackbar } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CloseIcon from "mdi-material-ui/Close";
 

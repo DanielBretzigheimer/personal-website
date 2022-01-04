@@ -1,11 +1,12 @@
 import {
   Container,
-  createMuiTheme,
+  createTheme,
   CssBaseline,
   ThemeProvider,
+  StyledEngineProvider,
   useMediaQuery,
-} from "@material-ui/core";
-import { blue, pink } from "@material-ui/core/colors";
+} from "@mui/material";
+import { blue, pink } from "@mui/material/colors";
 import React, { useMemo } from "react";
 import ProfileCard from "./components/profile/ProfileCard";
 import "./App.scss";
@@ -19,9 +20,9 @@ export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const theme = useMemo(
     () =>
-      createMuiTheme({
+      createTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          mode: prefersDarkMode ? "dark" : "light",
           primary: prefersDarkMode ? { main: blue[200] } : { main: blue[500] },
           secondary: prefersDarkMode ? { main: pink[200] } : { main: pink[500] },
         },
@@ -30,16 +31,18 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container className="main-content">
-        <ProfileCard />
-        <TimelineOverview />
-        <Certificates />
-        <InterestOverview />
-        <AppFooter />
-      </Container>
-      <LanguageSwitcher />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container className="main-content">
+          <ProfileCard />
+          <TimelineOverview />
+          <Certificates />
+          <InterestOverview />
+          <AppFooter />
+        </Container>
+        <LanguageSwitcher />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }

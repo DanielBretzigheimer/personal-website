@@ -1,4 +1,4 @@
-import { Hidden, Typography } from "@material-ui/core";
+import { Hidden, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MobileTimeline from "./MobileTimeline";
 import DesktopTimeline from "./DesktopTimeline";
@@ -42,32 +42,30 @@ export default function TimelineOverview() {
     }
   }
 
-  return (
-    <>
-      <Skills onSelection={addSkillFilter} />
-      <TimelineFilterHeader
-        filters={filters}
-        addFilter={addFilter}
-        removeFilter={removeFilter}
-        visibleItemCount={timelineItems.length}
-      />
-      {timelineItems.length > 0 ? (
-        <>
-          <Hidden smDown>
-            <DesktopTimeline items={timelineItems} filters={filters} />
-          </Hidden>
-          <Hidden mdUp>
-            <MobileTimeline items={timelineItems} filters={filters} />
-          </Hidden>
-        </>
-      ) : (
-        <Typography>
-          <span>{t("no-timeline-items")}</span>
-          <span role="img" aria-label="Trauriger Smiley">
-            😥
-          </span>
-        </Typography>
-      )}
-    </>
-  );
+  return <>
+    <Skills onSelection={addSkillFilter} />
+    <TimelineFilterHeader
+      filters={filters}
+      addFilter={addFilter}
+      removeFilter={removeFilter}
+      visibleItemCount={timelineItems.length}
+    />
+    {timelineItems.length > 0 ? (
+      <>
+        <Hidden mdDown>
+          <DesktopTimeline items={timelineItems} filters={filters} />
+        </Hidden>
+        <Hidden mdUp>
+          <MobileTimeline items={timelineItems} filters={filters} />
+        </Hidden>
+      </>
+    ) : (
+      <Typography>
+        <span>{t("no-timeline-items")}</span>
+        <span role="img" aria-label="Trauriger Smiley">
+          😥
+        </span>
+      </Typography>
+    )}
+  </>;
 }

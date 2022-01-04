@@ -1,26 +1,17 @@
-import { makeStyles } from "@material-ui/core";
-import { TimelineItem, TimelineContent } from "@material-ui/lab";
-import Timeline from "@material-ui/lab/Timeline";
+import { TimelineItem, TimelineContent } from "@mui/lab";
+import Timeline from "@mui/lab/Timeline";
 import React from "react";
 import Seperator from "./Seperator";
 import TimelineCard from "./TimelineCard";
 import TimelineProps from "./TimelineProps";
 import "./DesktopTimeline.scss";
 
-const useStyle = makeStyles(() => ({
-  timelineContent: {
-    marginBottom: "-50px",
-  },
-}));
-
 export default function DesktopTimeline(props: TimelineProps) {
-  const classes = useStyle();
-
   /**
    * Pointer Events have to be disabled for the timeline item to allow click through the margin. :(
    */
   return (
-    <Timeline align="alternate">
+    <Timeline position="alternate">
       {props.items.map((item, index) => {
         const isLast = index === props.items.length - 1;
         return (
@@ -28,7 +19,7 @@ export default function DesktopTimeline(props: TimelineProps) {
             <Seperator isLast={isLast} item={item} />
             <TimelineContent
               style={{ pointerEvents: "all" }}
-              className={isLast ? "" : classes.timelineContent}
+              sx={{ marginBottom: isLast ? 0 : "-50px" }}
             >
               <TimelineCard item={item} activeFilters={props.filters} />
             </TimelineContent>

@@ -1,4 +1,4 @@
-import { Mark, Slider, Typography } from "@material-ui/core";
+import { Mark, Slider, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import TimelineItems from "../../../data/TimelineItems";

@@ -1,18 +1,11 @@
-import { Box, Card, CardContent, Chip, makeStyles, Tooltip, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, Chip, Tooltip, Typography } from "@mui/material";
 import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi-material-ui";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
 import { TimelineItemContent, maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
-
-const useStyle = makeStyles(() => ({
-  card: {
-    [`&:target`]: {
-      animation: "pulsate 2s 2",
-    },
-  },
-}));
+import "./TimelineCard.scss";
 
 interface TimelineCardProps {
   item: TimelineItemContent;
@@ -21,7 +14,6 @@ interface TimelineCardProps {
 
 export default function TimelineCard(props: TimelineCardProps) {
   const { t } = useTranslation();
-  const classes = useStyle();
 
   function getKeywords() {
     const skills = props.item.skills;
@@ -73,7 +65,7 @@ export default function TimelineCard(props: TimelineCardProps) {
   }
 
   return (
-    <Card id={props.item.key} className={classes.card}>
+    <Card id={props.item.key} className="timeline-card">
       <CardContent>
         <Typography variant="h6">{t(props.item.key)}</Typography>
         <Box display="flex" alignItems="center">

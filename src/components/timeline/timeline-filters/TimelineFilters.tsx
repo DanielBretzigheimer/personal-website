@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Grid, IconButton, Typography } from "@material-ui/core";
+import { Box, Button, Divider, Grid, IconButton, Typography } from "@mui/material";
 import { Close } from "mdi-material-ui";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -19,54 +19,52 @@ export default function TimelineFilters(props: TimelineFiltersProps) {
     props.removeFilter(props.filters);
   }
 
-  return (
-    <>
-      <Box
-        display="flex"
-        alignItems="center"
-        marginLeft={2}
-        marginRight={2}
-        marginTop={1}
-        marginBottom={1}
-      >
-        <Button color="primary" onClick={resetFilters}>
-          {t("reset")}
-        </Button>
-        <Box flexGrow={1} textAlign="center">
-          <Typography>
-            {t("results")}: {props.visibleItemCount}
-          </Typography>
-        </Box>
-        <IconButton onClick={props.onClose}>
-          <Close />
-        </IconButton>
+  return <>
+    <Box
+      display="flex"
+      alignItems="center"
+      marginLeft={2}
+      marginRight={2}
+      marginTop={1}
+      marginBottom={1}
+    >
+      <Button color="primary" onClick={resetFilters}>
+        {t("reset")}
+      </Button>
+      <Box flexGrow={1} textAlign="center">
+        <Typography>
+          {t("results")}: {props.visibleItemCount}
+        </Typography>
       </Box>
-      <Divider />
-      <Box padding={3}>
-        <Grid container>
-          <Grid item xs={12}>
-            <TypeFilter
-              addFilter={props.addFilter}
-              removeFilter={props.removeFilter}
-              filters={props.filters}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <SkillFilter
-              addFilter={props.addFilter}
-              removeFilter={props.removeFilter}
-              filters={props.filters}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TeamSizeFilter
-              addFilter={props.addFilter}
-              removeFilter={props.removeFilter}
-              filters={props.filters}
-            />
-          </Grid>
+      <IconButton onClick={props.onClose} size="large">
+        <Close />
+      </IconButton>
+    </Box>
+    <Divider />
+    <Box padding={3}>
+      <Grid container>
+        <Grid item xs={12}>
+          <TypeFilter
+            addFilter={props.addFilter}
+            removeFilter={props.removeFilter}
+            filters={props.filters}
+          />
         </Grid>
-      </Box>
-    </>
-  );
+        <Grid item xs={12}>
+          <SkillFilter
+            addFilter={props.addFilter}
+            removeFilter={props.removeFilter}
+            filters={props.filters}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TeamSizeFilter
+            addFilter={props.addFilter}
+            removeFilter={props.removeFilter}
+            filters={props.filters}
+          />
+        </Grid>
+      </Grid>
+    </Box>
+  </>;
 }
