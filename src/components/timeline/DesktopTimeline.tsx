@@ -1,10 +1,9 @@
 import { TimelineItem, TimelineContent } from "@mui/lab";
 import Timeline from "@mui/lab/Timeline";
-import React from "react";
 import Seperator from "./Seperator";
 import TimelineCard from "./TimelineCard";
 import TimelineProps from "./TimelineProps";
-import "./DesktopTimeline.scss";
+import "./DesktopTimeline.css";
 
 export default function DesktopTimeline(props: TimelineProps) {
   /**

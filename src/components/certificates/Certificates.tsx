@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React from "react";
 import MCPBadge from "../../images/MCP_Badge.png";
 import CategoryHeader from "../CategoryHeader";
 import CertificateIcon from "mdi-material-ui/CertificateOutline";

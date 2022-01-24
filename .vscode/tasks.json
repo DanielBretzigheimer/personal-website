@@ -11,8 +11,8 @@
         },
         "background": {
           "activeOnStart": true,
-          "beginsPattern": "Compiling...",
-          "endsPattern": "Compiled .*"
+          "beginsPattern": ".*start.*",
+          "endsPattern": ".*dev server running at.*"
         }
       },
       "label": "Start Dev Server",

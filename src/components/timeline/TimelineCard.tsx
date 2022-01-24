@@ -5,7 +5,7 @@ import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
 import { TimelineItemContent, maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
-import "./TimelineCard.scss";
+import "./TimelineCard.css";
 
 interface TimelineCardProps {
   item: TimelineItemContent;
