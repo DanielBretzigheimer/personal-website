@@ -317,7 +317,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       caption: `03/2021 - ${nowString}`,
       type: "Private",
       content: {
-        1: <Link href="https://gitlab.com/dbretzigheimer95/personal-website" />,
+        1: <Link href="https://github.com/DanielBretzigheimer/personal-website" />,
       },
       skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillScss],
       teamSize: 1,
