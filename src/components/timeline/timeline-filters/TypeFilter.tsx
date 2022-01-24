@@ -1,5 +1,4 @@
 import { Chip, Typography } from "@mui/material";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import TimelineItems from "../../../data/TimelineItems";
 import ChipCollection from "../../ChipCollection";

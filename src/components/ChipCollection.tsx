@@ -7,7 +7,7 @@ interface ChipCollectionProps {
 
 export default function ChipCollection(props: ChipCollectionProps) {
   return (
-    <Stack direction="row" gap={1} flexWrap="wrap">
+    <Stack direction="row" gap={1} marginBottom={1} marginTop={1} flexWrap="wrap">
       {props.children.map((chip, i) => (
         <Box key={i}>{chip}</Box>
       ))}
