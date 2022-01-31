@@ -1,37 +1,41 @@
 # Readme
 
-Hallo im Repository meiner persönlichen Website. Den aktuell auf der Seite https://daniel-bretzigheimer.netlify.app/ ausgelieferten Code findest du im `master` branch.
+Hello in the repository of my personal website. The currently deployed version on https://www.daniel-bretzigheimer.dev/ can be found in the `main` branch.
 
-Solltest du Fragen oder Anmerkungen haben kannst du dich gerne bei mir melden.
+If you have any questions or comments, you can contact [me](mailto:dbretzigheimer95@gmail.com) any time.
 
-## Benutzte Technologien
+## Used Technologies
 
 ### React
 
-Die Anwendung ist vollständig in Typescript mit [React](https://reactjs.org/) geschrieben.
+The application is fully written in TypeScript with [React](https://reactjs.org/).
 
 ### Git
 
-Als Quellcode Verwaltung kommt git zum Einsatz
+Git is used for source code management.
 
 ### yarn
 
-Für das installieren und verwalten von Software Paketen wird [yarn](https://yarnpkg.com/) verwendet.
+[yarn](https://yarnpkg.com/) is used to install and manage software packages.
 
 ## CI/CD
 
-Für automatische builds und das ausliefern der Seite wird [Netlify](https://www.netlify.com/) benutzt.
+[Netlify](https://www.netlify.com/) is used for automatic builds and delivery of the page.
 
-## Benutzte npm Pakete
+## Used Packages
 
 ### [Material UI](https://material-ui.com/)
 
-Material Design UI Framework für React
+Material Design UI Framework for React
 
 ### [mdi-material-ui](https://materialdesignicons.com/)
 
-Material Design Icons in Material UI Image Komponente
+Material Design Icon components
 
-### [node-sass](https://sass-lang.com/)
+### [i18next](https://react.i18next.com/)
 
-Unterstützung für `*.scss` Dateien
+Internationalization for React
+
+### [vite](https://vitejs.dev/)
+
+Dev Server and Build Tool
