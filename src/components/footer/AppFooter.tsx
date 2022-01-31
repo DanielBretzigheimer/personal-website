@@ -1,7 +1,7 @@
 import { Box, Link, Typography } from "@mui/material";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import Imprint from "../imprint/Imprint";
+import { version } from "../../../package.json";
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -23,7 +23,9 @@ export default function Footer() {
           EN
         </Link>
       </Box>
-      <Typography variant="caption">© {new Date().getFullYear()} · Daniel Bretzigheimer</Typography>
+      <Typography variant="caption">
+        © {new Date().getFullYear()} · Daniel Bretzigheimer · V{version}
+      </Typography>
       <Imprint />
     </Box>
   );

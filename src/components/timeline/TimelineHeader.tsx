@@ -1,4 +1,4 @@
-import { Box, Chip, Drawer, IconButton, Typography } from "@mui/material";
+import { Box, Chip, Drawer, IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
 import ResumeIcon from "mdi-material-ui/FileAccountOutline";
@@ -8,6 +8,7 @@ import ChipCollection from "../ChipCollection";
 import TimelineFilters from "./timeline-filters/TimelineFilters";
 import { useTranslation } from "react-i18next";
 import { maxTeamSizeValue } from "../../model/TimelineItemContent";
+import { StickyHeader } from "../StickyHeader";
 
 interface TimelineHeaderProps {
   filters: Array<TimelineFilter>;
@@ -19,6 +20,8 @@ interface TimelineHeaderProps {
 export default function TimelineFilterHeader(props: TimelineHeaderProps) {
   const { t } = useTranslation();
   const [filtersDrawerOpen, setFiltersDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("xl"));
 
   function getFilterLabel(filter: TimelineFilter) {
     if (filter.type === "teamSize" && Array.isArray(filter.value)) {
@@ -36,43 +39,37 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
     return filter.value;
   }
 
-  function filtersDrawerContent() {
-    return (
-      <TimelineFilters
-        addFilter={props.addFilter}
-        removeFilter={props.removeFilter}
-        filters={props.filters}
-        visibleItemCount={props.visibleItemCount}
-        onClose={() => setFiltersDrawerOpen(false)}
-      />
-    );
-  }
-
   return (
     <>
-      <Box display="flex" alignItems="baseline">
-        <Box flexGrow={1}>
-          <CategoryHeader>
-            <ResumeIcon fontSize="large" />
-            {t("curriculum-vitae")}
-          </CategoryHeader>
+      <StickyHeader>
+        <Box display="flex" alignItems="baseline">
+          <Box flexGrow={1}>
+            <CategoryHeader>
+              <ResumeIcon fontSize="large" />
+              {t("curriculum-vitae")}
+            </CategoryHeader>
+          </Box>
+          <IconButton onClick={() => setFiltersDrawerOpen(true)} size="large">
+            <FilterOutline />
+          </IconButton>
         </Box>
-        <IconButton onClick={() => setFiltersDrawerOpen(true)} size="large">
-          <FilterOutline />
-        </IconButton>
-      </Box>
+      </StickyHeader>
       <Drawer
-        sx={{
-          maxWidth: "500px",
-        }}
+        variant={isDesktop ? "temporary" : "temporary"}
         open={filtersDrawerOpen}
         onClose={() => setFiltersDrawerOpen(false)}
         anchor="right"
       >
-        {filtersDrawerContent()}
+        <TimelineFilters
+          addFilter={props.addFilter}
+          removeFilter={props.removeFilter}
+          filters={props.filters}
+          visibleItemCount={props.visibleItemCount}
+          onClose={() => setFiltersDrawerOpen(false)}
+        />
       </Drawer>
       {props.filters.length > 0 ? (
-        <Box>
+        <Box marginLeft={2} marginRight={2}>
           <Typography>{t("active-filters")}</Typography>
           <ChipCollection>
             {props.filters.map((f, i) => (

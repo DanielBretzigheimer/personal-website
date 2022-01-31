@@ -19,52 +19,54 @@ export default function TimelineFilters(props: TimelineFiltersProps) {
     props.removeFilter(props.filters);
   }
 
-  return <>
-    <Box
-      display="flex"
-      alignItems="center"
-      marginLeft={2}
-      marginRight={2}
-      marginTop={1}
-      marginBottom={1}
-    >
-      <Button color="primary" onClick={resetFilters}>
-        {t("reset")}
-      </Button>
-      <Box flexGrow={1} textAlign="center">
-        <Typography>
-          {t("results")}: {props.visibleItemCount}
-        </Typography>
+  return (
+    <Box maxWidth={500}>
+      <Box
+        display="flex"
+        alignItems="center"
+        marginLeft={2}
+        marginRight={2}
+        marginTop={1}
+        marginBottom={1}
+      >
+        <Button color="primary" onClick={resetFilters}>
+          {t("reset")}
+        </Button>
+        <Box flexGrow={1} textAlign="center">
+          <Typography>
+            {t("results")}: {props.visibleItemCount}
+          </Typography>
+        </Box>
+        <IconButton onClick={props.onClose} size="large">
+          <Close />
+        </IconButton>
       </Box>
-      <IconButton onClick={props.onClose} size="large">
-        <Close />
-      </IconButton>
+      <Divider />
+      <Box padding={3}>
+        <Grid container>
+          <Grid item xs={12}>
+            <TypeFilter
+              addFilter={props.addFilter}
+              removeFilter={props.removeFilter}
+              filters={props.filters}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <SkillFilter
+              addFilter={props.addFilter}
+              removeFilter={props.removeFilter}
+              filters={props.filters}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TeamSizeFilter
+              addFilter={props.addFilter}
+              removeFilter={props.removeFilter}
+              filters={props.filters}
+            />
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
-    <Divider />
-    <Box padding={3}>
-      <Grid container>
-        <Grid item xs={12}>
-          <TypeFilter
-            addFilter={props.addFilter}
-            removeFilter={props.removeFilter}
-            filters={props.filters}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <SkillFilter
-            addFilter={props.addFilter}
-            removeFilter={props.removeFilter}
-            filters={props.filters}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TeamSizeFilter
-            addFilter={props.addFilter}
-            removeFilter={props.removeFilter}
-            filters={props.filters}
-          />
-        </Grid>
-      </Grid>
-    </Box>
-  </>;
+  );
 }

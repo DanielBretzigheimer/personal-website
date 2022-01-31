@@ -9,6 +9,7 @@ import TimelineFilterHeader from "./TimelineHeader";
 import TimelineFilter from "../../model/TimelineFilter";
 import Filter from "../../services/FilterService";
 import { useTranslation } from "react-i18next";
+import { Box } from "@mui/system";
 
 export default function TimelineOverview() {
   const { t } = useTranslation();
@@ -42,30 +43,34 @@ export default function TimelineOverview() {
     }
   }
 
-  return <>
-    <Skills onSelection={addSkillFilter} />
-    <TimelineFilterHeader
-      filters={filters}
-      addFilter={addFilter}
-      removeFilter={removeFilter}
-      visibleItemCount={timelineItems.length}
-    />
-    {timelineItems.length > 0 ? (
-      <>
-        <Hidden mdDown>
-          <DesktopTimeline items={timelineItems} filters={filters} />
-        </Hidden>
-        <Hidden mdUp>
-          <MobileTimeline items={timelineItems} filters={filters} />
-        </Hidden>
-      </>
-    ) : (
-      <Typography>
-        <span>{t("no-timeline-items")}</span>
-        <span role="img" aria-label="Trauriger Smiley">
-          😥
-        </span>
-      </Typography>
-    )}
-  </>;
+  return (
+    <>
+      <Skills onSelection={addSkillFilter} />
+      <Box>
+        <TimelineFilterHeader
+          filters={filters}
+          addFilter={addFilter}
+          removeFilter={removeFilter}
+          visibleItemCount={timelineItems.length}
+        />
+        {timelineItems.length > 0 ? (
+          <>
+            <Hidden mdDown>
+              <DesktopTimeline items={timelineItems} filters={filters} />
+            </Hidden>
+            <Hidden mdUp>
+              <MobileTimeline items={timelineItems} filters={filters} />
+            </Hidden>
+          </>
+        ) : (
+          <Typography>
+            <span>{t("no-timeline-items")}</span>
+            <span role="img" aria-label="Trauriger Smiley">
+              😥
+            </span>
+          </Typography>
+        )}
+      </Box>
+    </>
+  );
 }

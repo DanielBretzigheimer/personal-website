@@ -13,7 +13,6 @@ import "./App.css";
 import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";
-import LanguageSwitcher from "./components/LanguageSwitcher";
 import AppFooter from "./components/footer/AppFooter";
 
 export default function App() {
@@ -21,11 +20,18 @@ export default function App() {
   const theme = useMemo(
     () =>
       createTheme({
-        palette: {
-          mode: prefersDarkMode ? "dark" : "light",
-          primary: prefersDarkMode ? { main: blue[200] } : { main: blue[500] },
-          secondary: prefersDarkMode ? { main: pink[200] } : { main: pink[500] },
-        },
+        palette: prefersDarkMode
+          ? {
+              mode: "dark",
+              primary: { main: blue[200] },
+              secondary: { main: pink[200] },
+            }
+          : {
+              mode: "light",
+              background: { default: "#f5f5f5" },
+              primary: { main: blue[500] },
+              secondary: { main: pink[500] },
+            },
       }),
     [prefersDarkMode]
   );
@@ -41,7 +47,6 @@ export default function App() {
           <InterestOverview />
           <AppFooter />
         </Container>
-        <LanguageSwitcher />
       </ThemeProvider>
     </StyledEngineProvider>
   );
