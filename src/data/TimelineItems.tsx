@@ -308,11 +308,6 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       teamSize: 5,
     },
     {
-      key: "compliance-training",
-      caption: "02/2021",
-      type: "Education",
-    },
-    {
       key: "personal-website",
       caption: `03/2021 - ${nowString}`,
       type: "Private",
@@ -376,8 +371,15 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "react-dashboard-reporting-application",
       caption: `01/2022 - ${nowString}`, // 05/2022
       type: "Work",
-      skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillScss],
+      skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillCss],
       teamSize: 2,
+    },
+    {
+      key: "react-app-framework",
+      caption: `03/2022 - ${nowString}`,
+      type: "Work",
+      skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillCss],
+      teamSize: 3,
     },
   ];
 }

@@ -34,11 +34,11 @@ export const skillNetCore = {
 };
 export const skillAspNetCore = {
   name: "asp-dotnet-core",
-  value: 90,
+  value: 100,
   website: "https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core",
 };
 export const skillReact = { name: "react", value: 90, website: "https://reactjs.org/" };
-export const skillVueJs = { name: "vue-js", value: 70, website: "https://vuejs.org/" };
+export const skillVueJs = { name: "vue-js", value: 80, website: "https://vuejs.org/" };
 export const skillAngularJs = { name: "angular-js", value: 70, website: "https://angularjs.org/" };
 export const skillAngular = { name: "angular", value: 30, website: "https://angular.io/" };
 export const skillGatsby = { name: "gatsby", value: 30, website: "https://www.gatsbyjs.com/" };
@@ -58,6 +58,11 @@ export const skillMicrosoftSqlServer = {
   name: "microsoft-sql-server",
   value: 50,
   website: "https://www.microsoft.com/de-de/sql-server/sql-server-2019",
+};
+export const skillOracle = {
+  name: "oracle",
+  value: 50,
+  website: "https://www.oracle.com/database/",
 };
 export const skillMariaDb = { name: "maria-db", value: 40, website: "https://mariadb.org/" };
 export const skillMySql = { name: "my-sql", value: 30, website: "https://www.mysql.com/" };
@@ -182,7 +187,14 @@ export default function (): Array<SkillGroup> {
     },
     {
       name: "databases",
-      skills: [skillPostgreSql, skillSqLite, skillMicrosoftSqlServer, skillMariaDb, skillMySql],
+      skills: [
+        skillPostgreSql,
+        skillSqLite,
+        skillMicrosoftSqlServer,
+        skillOracle,
+        skillMariaDb,
+        skillMySql,
+      ],
     },
     {
       name: "integrated-development-environment",

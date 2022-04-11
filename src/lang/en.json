@@ -126,8 +126,6 @@
   "browser-game-development-content": "Since March 2020 I have been part of the volunteer development team for the browser game Hidden Empire Galaxy Adventures. Here I was entrusted with creating the front end for the next version (V5), which is planned for the year 2023. Since the current version is technically out of date, it was decided to develop the new UI from scratch with Vue.js. Communication with the backend takes place via a websocket connection. In addition to the normal display, there are also 3D animations that are implemented using Three.js.",
   "asset-management-application": "Asset management web application",
   "asset-management-application-content": "This application was developed as a product that can be adapted to customer requirements using configuration files. I supported the existing development team in expanding and modernizing the application. I expanded existing components and added new ones, such as a datagrid or a matrix component. The entry into an already existing application of this size was a particular challenge. In addition to developing new features, I also helped with the switch to TypeScript and the removal of dependencies on AngularJS to pave the way for a future framework swap.",
-  "compliance-training": "Compliance training",
-  "compliance-training-content": "",
   "personal-website": "Personal website",
   "personal-website-content": "This website was started as a small practice project for React. I use it not only as a place to introduce myself, but also to try out the latest web technologies. The source code is publicly available and can be viewed <1>here</1>.",
   "github-material-ui": "Material UI",
@@ -144,5 +142,8 @@
   "angular-label-layout-generator-content": "This application was created to easily create labels for various products. It consists of two interfaces and a server. To create the labels, there is a WPF application that can be used to create a label for every product and language combination. In addition to normal text and a fixed QR code, predefined images (e.g. warning symbols) can be added to the label. The labels are then transferred to the server via a REST interface and saved there. The labels can be called up and downloaded via another web interface.",
   "react-dashboard-reporting-application": "Dashboard and reporting application",
   "react-dashboard-reporting-application-content": "The application allows users to configure their own dashboards and reports. Depending on the user level, predefined controls can be added or your own controls can be created. Own controls can be shared with another user group via a release management. When adding a control to their own dashboard or report, the user can narrow down the underlying data according to his wishes.",
-  "frontend-developer": "Frontend Developer"
+  "frontend-developer": "Frontend Developer",
+  "react-app-framework": "React App Framework",
+  "react-app-framework-content": "A npm package in which React components and hooks that are needed in several other applications are stored.",
+  "oracle": "Oracle"
 }

@@ -125,8 +125,6 @@
   "browser-game-development-content": "Seit März 2020 gehöre ich dem ehrenamtlichen Entwicklerteam des Browsergames Hidden Empire Galaxy Adventures an. Hier wurde ich mit dem Erstellen des Frontends für die nächste Version (V5) beauftragt, die für das Jahr 2023 geplant ist. Da die aktuelle Version technisch veraltet ist, wurde entschieden die neue UI von Grund auf neu mit Vue.js zu entwickeln. Die Kommunikation mit dem Backend erfolgt über eine Websocket Verbindung. Neben der normalen Anzeige gibt es auch 3D Animationen die mithilfe von Three.js umgesetzt werden.",
   "asset-management-application": "Webanwendung zur Assetverwaltung",
   "asset-management-application-content": "Diese Anwendung wurde als Produkt entwickelt, dass über Konfigurationsdateien an den Kundenwunsch angepasst werden kann. Ich habe das bestehende Entwicklerteam bei der Erweiterung und Modernisierung der Anwendung unterstützt. Hierbei habe ich bestehende Komponenten erweitert und neue hinzugefügt, wie z.B. ein Datagrid oder eine Matrix Komponente. Eine besondere Herausforderung war der Einstieg in eine bereits bestehende Anwendung in dieser Größe. Zusätzlich zur Entwicklung neuer Funktionen habe ich auch beim Umstieg auf TypeScript und der Entfernung von Abhängigkeiten zu AngularJS geholfen, um den Weg für ein zukünftiges Austauschen des Frameworks vorzubereiten.",
-  "compliance-training": "Compliance Schulung",
-  "compliance-training-content": "",
   "personal-website": "Persönliche Webseite",
   "personal-website-content": "Als kleines Übungsprojekt für React gestartet, ist diese Webseite entstanden. Ich nutze sie nicht nur, als Platz um mich vorzustellen, sondern auch um die neusten Webtechnologien auszuprobieren. Der Quellcode ist öffentlich zugänglich und kann <1>hier</1> eingesehen werden.",
   "github-material-ui": "Material UI",
@@ -143,5 +141,8 @@
   "angular-label-layout-generator-content": "Zur einfachen Erstellung von Etiketten für verschiedene Produkte ist diese Anwendung entstanden. Sie besteht aus zwei Oberflächen und einem Server. Um die Etiketten zu erstellen, gibt es eine WPF Anwendung, mit der man für jede Produkt- und Sprachkombination ein Etikett anlegen kann. Zusätzlich zu normalem Text und einem festen QR-Code können vordefinierte Bilder (z.B. Warnsymbole) dem Etikett hinzugefügt werden. Die Etiketten werden anschließend über eine REST Schnittstelle auf den Server übertragen und dort gespeichert. Über eine weitere Web-Oberfläche können die Etiketten abgerufen und heruntergeladen werden.",
   "react-dashboard-reporting-application": "Dashboard und Berichtsanwendung",
   "react-dashboard-reporting-application-content": "Die Anwendung bietet den Benutzern die Möglichkeit eigene Dashboards und Berichte zu konfigurieren. Je nach Benutzerlevel können vorgefertigte Controls hinzugefügt werden oder eigene Controls angelegt werden. Über eine Freigabeverwaltung können die eigenen Controls mit einer anderen Benutzergruppe geteilt werden. Beim Hinzufügen eines Controls auf dem eigenen Dashboard oder Bericht kann der Benutzer die zugrundeliegenden Daten nach seinen Wünschen eingrenzen.",
-  "frontend-developer": "Frontend Entwickler"
+  "frontend-developer": "Frontend Entwickler",
+  "react-app-framework": "React App Framework",
+  "react-app-framework-content": "Ein npm Paket in dem React Komponenten und Hooks ausgelagert werden, die in mehreren anderen Anwendungen benötigt werden.",
+  "oracle": "Oracle"
 }
