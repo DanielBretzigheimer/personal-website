@@ -14,6 +14,8 @@ import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";
 import AppFooter from "./components/footer/AppFooter";
+import { ProfileParallax } from "./components/profile/ProfileParallax";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -38,16 +40,19 @@ export default function App() {
 
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Container className="main-content">
-          <ProfileCard />
-          <TimelineOverview />
-          <Certificates />
-          <InterestOverview />
-          <AppFooter />
-        </Container>
-      </ThemeProvider>
+      <ParallaxProvider>
+        <ProfileParallax />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Container className="main-content">
+            <ProfileCard />
+            <TimelineOverview />
+            <Certificates />
+            <InterestOverview />
+            <AppFooter />
+          </Container>
+        </ThemeProvider>
+      </ParallaxProvider>
     </StyledEngineProvider>
   );
 }

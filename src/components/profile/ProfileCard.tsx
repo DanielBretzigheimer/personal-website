@@ -12,6 +12,7 @@ import ProfilePicture from "../../images/Profile_Picture.jpg";
 import { useTranslation } from "react-i18next";
 import { Biography } from "./Biography";
 import { About } from "./About";
+import ProfileLinks from "./ProfileLinks";
 
 export default function ProfileCard() {
   const { t } = useTranslation();
@@ -44,15 +45,14 @@ export default function ProfileCard() {
               <Typography sx={{ hyphens: "manual" }} variant="h4">
                 Daniel Bretzigheimer
               </Typography>
-              <Typography variant="subtitle1">{t("frontend-developer")}</Typography>
+              <Typography variant="subtitle1">{t("job-title")}</Typography>
+              <ProfileLinks />
             </Box>
           </Box>
         </CardContent>
-        <Divider />
         <CardContent>
           <About />
         </CardContent>
-        <Divider />
         <CardContent>
           <Biography />
         </CardContent>

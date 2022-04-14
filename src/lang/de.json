@@ -1,5 +1,5 @@
 {
-  "job-title": "Frontend Developer",
+  "job-title": "Fullstack Software Entwickler",
   "about-me": "Über mich",
   "bio": "Bio",
   "mail": "Mail",
@@ -141,7 +141,6 @@
   "angular-label-layout-generator-content": "Zur einfachen Erstellung von Etiketten für verschiedene Produkte ist diese Anwendung entstanden. Sie besteht aus zwei Oberflächen und einem Server. Um die Etiketten zu erstellen, gibt es eine WPF Anwendung, mit der man für jede Produkt- und Sprachkombination ein Etikett anlegen kann. Zusätzlich zu normalem Text und einem festen QR-Code können vordefinierte Bilder (z.B. Warnsymbole) dem Etikett hinzugefügt werden. Die Etiketten werden anschließend über eine REST Schnittstelle auf den Server übertragen und dort gespeichert. Über eine weitere Web-Oberfläche können die Etiketten abgerufen und heruntergeladen werden.",
   "react-dashboard-reporting-application": "Dashboard und Berichtsanwendung",
   "react-dashboard-reporting-application-content": "Die Anwendung bietet den Benutzern die Möglichkeit eigene Dashboards und Berichte zu konfigurieren. Je nach Benutzerlevel können vorgefertigte Controls hinzugefügt werden oder eigene Controls angelegt werden. Über eine Freigabeverwaltung können die eigenen Controls mit einer anderen Benutzergruppe geteilt werden. Beim Hinzufügen eines Controls auf dem eigenen Dashboard oder Bericht kann der Benutzer die zugrundeliegenden Daten nach seinen Wünschen eingrenzen.",
-  "frontend-developer": "Frontend Entwickler",
   "react-app-framework": "React App Framework",
   "react-app-framework-content": "Ein npm Paket in dem React Komponenten und Hooks ausgelagert werden, die in mehreren anderen Anwendungen benötigt werden.",
   "oracle": "Oracle"

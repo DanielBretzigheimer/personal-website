@@ -1,6 +1,5 @@
 import { Link, Typography } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
-import ProfileLinks from "./ProfileLinks";
 
 export function About() {
   const { t } = useTranslation();
@@ -18,7 +17,6 @@ export function About() {
           }}
         />
       </Typography>
-      <ProfileLinks />
     </>
   );
 }
