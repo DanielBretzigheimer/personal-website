@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df2b1974-fc92-424a-a8d5-78d4500c3f42/deploy-status)](https://app.netlify.com/sites/daniel-bretzigheimer/deploys)
+
 # Readme
 
 Hello in the repository of my personal website. The currently deployed version on https://www.daniel-bretzigheimer.dev/ can be found in the `main` branch.
