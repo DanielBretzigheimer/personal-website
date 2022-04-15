@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
 
-export function ProfileParallax() {
+export function TopParallax() {
   const theme = useTheme();
 
   return (

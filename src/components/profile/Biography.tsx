@@ -44,21 +44,19 @@ export function Biography() {
     <>
       <Typography variant="h5">{t("bio")}</Typography>
       <Grid container>
-        {profileInfoLines.map((pi, index) => {
-          return (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box display="flex" marginTop={1.5}>
-                <Box marginTop="16px">{pi.icon}</Box>
-                <Box marginLeft={1.5}>
-                  <InputLabel shrink={true}>{pi.label}</InputLabel>
-                  <Typography>
-                    {pi.link ? <Link href={pi.link}>{pi.text}</Link> : pi.text}
-                  </Typography>
-                </Box>
+        {profileInfoLines.map((pi, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Box display="flex" alignItems="flex-end" mt={1.5}>
+              {pi.icon}
+              <Box ml={1.5} width={0} flexGrow={1}>
+                <InputLabel shrink={true}>{pi.label}</InputLabel>
+                <Typography textOverflow="ellipsis" overflow="hidden" noWrap>
+                  {pi.link ? <Link href={pi.link}>{pi.text}</Link> : pi.text}
+                </Typography>
               </Box>
-            </Grid>
-          );
-        })}
+            </Box>
+          </Grid>
+        ))}
       </Grid>
     </>
   );

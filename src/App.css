@@ -2,10 +2,6 @@ html {
   color-scheme: light dark;
 }
 
-.main-content {
-  padding: 1rem 0;
-}
-
 @keyframes pulsate {
   0% {
     filter: contrast(1);

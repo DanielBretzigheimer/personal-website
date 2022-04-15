@@ -26,7 +26,7 @@ export default function ProfileCard() {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
+              alignItems: isMobile ? "top" : "center",
               flexDirection: isMobile ? "row" : "column",
             }}
           >
@@ -34,6 +34,7 @@ export default function ProfileCard() {
               src={ProfilePicture}
               className="profile-picture"
               sx={{
+                mt: isMobile ? 1 : 0,
                 width: theme.spacing(isMobile ? 7 : 14),
                 height: theme.spacing(isMobile ? 7 : 14),
               }}

@@ -46,7 +46,7 @@ export default function TimelineOverview() {
   return (
     <>
       <Skills onSelection={addSkillFilter} />
-      <Box>
+      <Box ml={-1} mr={-1}>
         <TimelineFilterHeader
           filters={filters}
           addFilter={addFilter}

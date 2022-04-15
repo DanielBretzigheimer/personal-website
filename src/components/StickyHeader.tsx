@@ -1,4 +1,4 @@
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, useTheme } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 interface StickyHeaderProps {
@@ -36,8 +36,12 @@ export function StickyHeader(props: StickyHeaderProps) {
   }, []);
 
   return (
-    <Box position="sticky" zIndex={1} top={0} ref={ref}>
-      <Paper square elevation={isSticky ? 4 : 0}>
+    <Box position="sticky" zIndex={1} top={0} mt={3} ref={ref}>
+      <Paper
+        square
+        elevation={isSticky ? 4 : 0}
+        sx={(theme) => (isSticky ? {} : { background: theme.palette.background.default })}
+      >
         {props.children}
       </Paper>
     </Box>
