@@ -21,36 +21,36 @@ export default function ProfileCard() {
 
   return (
     <>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: isMobile ? "top" : "center",
+          flexDirection: isMobile ? "row" : "column",
+          mt: isMobile ? 0 : 2,
+          mb: 2,
+        }}
+      >
+        <Avatar
+          src={ProfilePicture}
+          className="profile-picture"
+          sx={{
+            mt: isMobile ? 1 : 0,
+            width: theme.spacing(isMobile ? 7 : 14),
+            height: theme.spacing(isMobile ? 7 : 14),
+          }}
+        />
+        <Box
+          className="profile-name"
+          sx={isMobile ? { marginLeft: theme.spacing(2) } : { textAlign: "center" }}
+        >
+          <Typography sx={{ hyphens: "manual" }} variant="h4">
+            Daniel Bretzigheimer
+          </Typography>
+          <Typography variant="subtitle1">{t("job-title")}</Typography>
+          <ProfileLinks />
+        </Box>
+      </Box>
       <Card>
-        <CardContent>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: isMobile ? "top" : "center",
-              flexDirection: isMobile ? "row" : "column",
-            }}
-          >
-            <Avatar
-              src={ProfilePicture}
-              className="profile-picture"
-              sx={{
-                mt: isMobile ? 1 : 0,
-                width: theme.spacing(isMobile ? 7 : 14),
-                height: theme.spacing(isMobile ? 7 : 14),
-              }}
-            />
-            <Box
-              className="profile-name"
-              sx={isMobile ? { marginLeft: theme.spacing(2) } : { textAlign: "center" }}
-            >
-              <Typography sx={{ hyphens: "manual" }} variant="h4">
-                Daniel Bretzigheimer
-              </Typography>
-              <Typography variant="subtitle1">{t("job-title")}</Typography>
-              <ProfileLinks />
-            </Box>
-          </Box>
-        </CardContent>
         <CardContent>
           <About />
         </CardContent>

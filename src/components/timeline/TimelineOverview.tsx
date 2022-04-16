@@ -1,5 +1,5 @@
 import { Hidden, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MobileTimeline from "./MobileTimeline";
 import DesktopTimeline from "./DesktopTimeline";
 import Skills from "../skills/Skills";
@@ -15,6 +15,7 @@ export default function TimelineOverview() {
   const { t } = useTranslation();
   const [timelineItems, setTimelineItems] = useState(TimelineItems());
   const [filters, setFilters] = useState(new Array<TimelineFilter>());
+  const timelineBox = useRef<HTMLElement>();
 
   useEffect(() => {
     const filtered = TimelineItems().filter((item) => Filter(item, filters));
@@ -22,7 +23,10 @@ export default function TimelineOverview() {
   }, [filters]);
 
   function addSkillFilter(skill: Skill) {
+    if (filters.some((f) => f.type === "keyword" && f.value === skill.name)) return;
+
     addFilter({ type: "keyword", value: skill.name });
+    if (timelineBox.current) timelineBox.current.scrollIntoView({ behavior: "smooth" });
   }
 
   function addFilter(filter: TimelineFilter) {
@@ -46,7 +50,7 @@ export default function TimelineOverview() {
   return (
     <>
       <Skills onSelection={addSkillFilter} />
-      <Box ml={-1} mr={-1}>
+      <Box ref={timelineBox} ml={-1} mr={-1}>
         <TimelineFilterHeader
           filters={filters}
           addFilter={addFilter}

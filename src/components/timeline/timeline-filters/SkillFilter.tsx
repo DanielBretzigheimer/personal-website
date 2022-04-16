@@ -21,16 +21,17 @@ export default function SkillFilter(props: TimelineFilterProps) {
           <Typography>{t(group.name)}</Typography>
           <ChipCollection>
             {group.skills.map((skill, i) => {
-              const filter = props.filters.find(
+              const active = props.filters.find(
                 (f) => f.type === "keyword" && f.value === skill.name
               );
-              const color = filter ? "primary" : "default";
+              const color = active ? "primary" : "default";
               return (
                 <Chip
                   key={i}
                   label={t(skill.name)}
-                  onClick={() => (filter ? props.removeFilter(filter) : addFilter(skill.name))}
+                  onClick={() => (active ? props.removeFilter(active) : addFilter(skill.name))}
                   color={color}
+                  variant={active ? "filled" : "outlined"}
                 />
               );
             })}

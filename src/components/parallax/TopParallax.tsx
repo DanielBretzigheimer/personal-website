@@ -12,9 +12,9 @@ export function TopParallax() {
           children: (
             <div
               style={{
-                background: theme.palette.primary.main,
+                background: theme.palette.primary.light,
                 opacity: 0.3,
-                height: "750px",
+                height: "1000px",
                 transform: "rotate(5deg)",
                 width: "120%",
                 marginLeft: "-10%",
@@ -23,7 +23,7 @@ export function TopParallax() {
           ),
         },
       ]}
-      style={{ height: "1000px", position: "absolute", zIndex: -1 }}
+      style={{ height: "2000px", position: "absolute", zIndex: -1 }}
     />
   );
 }

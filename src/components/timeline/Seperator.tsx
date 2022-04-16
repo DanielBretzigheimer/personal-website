@@ -4,6 +4,7 @@ import { TimelineItemContent } from "../../model/TimelineItemContent";
 import EducationIcon from "mdi-material-ui/SchoolOutline";
 import ProjectIcon from "mdi-material-ui/StarOutline";
 import { Tooltip } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface SeperatorProps {
   isLast: boolean;
@@ -11,6 +12,7 @@ interface SeperatorProps {
 }
 
 export default function Seperator(props: SeperatorProps) {
+  const { t } = useTranslation();
   const color =
     props.item.type === "Work" ? "primary" : props.item.type === "Private" ? "secondary" : "grey";
 
@@ -25,22 +27,13 @@ export default function Seperator(props: SeperatorProps) {
     }
   }
 
-  function getTitle() {
-    switch (props.item.type) {
-      case "Work":
-        return "Arbeit";
-      case "Private":
-        return "Privat";
-      case "Education":
-        return "Bildung";
-    }
-  }
-
   return (
-    <TimelineSeparator>
-      <TimelineDot color={color} variant="outlined">
-        <Tooltip title={getTitle()}>{getIcon()}</Tooltip>
-      </TimelineDot>
+    <TimelineSeparator sx={{ pointerEvents: "all" }}>
+      <Tooltip title={t(props.item.type.toLowerCase()).toString()}>
+        <TimelineDot color={color} variant="outlined">
+          {getIcon()}
+        </TimelineDot>
+      </Tooltip>
       {props.isLast ? <></> : <TimelineConnector />}
     </TimelineSeparator>
   );

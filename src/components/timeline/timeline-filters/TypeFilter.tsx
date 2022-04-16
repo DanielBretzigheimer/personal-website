@@ -17,14 +17,15 @@ export default function TypeFilter(props: TimelineFilterProps) {
       <Typography variant="h6">{t("type")}</Typography>
       <ChipCollection>
         {types.map((type, i) => {
-          const filter = props.filters.find((f) => f.type === "type" && f.value === type);
-          const color = filter ? "primary" : "default";
+          const active = props.filters.find((f) => f.type === "type" && f.value === type);
+          const color = type === "Work" ? "primary" : type === "Private" ? "secondary" : "default";
           return (
             <Chip
               key={i}
               label={t(type.toLocaleLowerCase())}
-              onClick={() => (filter ? props.removeFilter(filter) : addFilter("type", type))}
+              onClick={() => (active ? props.removeFilter(active) : addFilter("type", type))}
               color={color}
+              variant={active ? "filled" : "outlined"}
             />
           );
         })}

@@ -1,7 +1,6 @@
 import { Box, Chip, Drawer, IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FilterOutline } from "mdi-material-ui";
 import React, { useState } from "react";
-import ResumeIcon from "mdi-material-ui/FileAccountOutline";
 import TimelineFilter from "../../model/TimelineFilter";
 import CategoryHeader from "../CategoryHeader";
 import ChipCollection from "../ChipCollection";
@@ -44,10 +43,7 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
       <StickyHeader>
         <Box display="flex" alignItems="baseline">
           <Box flexGrow={1}>
-            <CategoryHeader>
-              <ResumeIcon fontSize="large" />
-              {t("curriculum-vitae")}
-            </CategoryHeader>
+            <CategoryHeader>{t("curriculum-vitae")}</CategoryHeader>
           </Box>
           <IconButton onClick={() => setFiltersDrawerOpen(true)} size="large">
             <FilterOutline />
@@ -73,7 +69,12 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
           <Typography>{t("active-filters")}</Typography>
           <ChipCollection>
             {props.filters.map((f, i) => (
-              <Chip key={i} label={getFilterLabel(f)} onDelete={() => props.removeFilter(f)} />
+              <Chip
+                variant="outlined"
+                key={i}
+                label={getFilterLabel(f)}
+                onDelete={() => props.removeFilter(f)}
+              />
             ))}
           </ChipCollection>
         </Box>

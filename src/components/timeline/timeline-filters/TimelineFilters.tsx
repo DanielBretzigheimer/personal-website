@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Grid, IconButton, Typography } from "@mui/material";
 import { Close } from "mdi-material-ui";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import SkillFilter from "./SkillFilter";
 import TeamSizeFilter from "./TeamSizeFilter";

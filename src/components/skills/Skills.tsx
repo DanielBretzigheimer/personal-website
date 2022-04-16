@@ -1,6 +1,4 @@
 import { Box, Card, Grid } from "@mui/material";
-import { TuneVertical } from "mdi-material-ui";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import SkillData from "../../data/SkillData";
 import Skill from "../../model/Skill";
@@ -18,9 +16,7 @@ export default function Skills(props: SkillsProps) {
 
   return (
     <Box>
-      <CategoryHeader>
-        <TuneVertical fontSize="large" /> {t("skills")}
-      </CategoryHeader>
+      <CategoryHeader>{t("skills")}</CategoryHeader>
       <Card>
         <Box marginTop={2}>
           <Grid container spacing={2}>

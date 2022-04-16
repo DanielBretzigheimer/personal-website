@@ -12,7 +12,7 @@ export function BottomParallax() {
           children: (
             <div
               style={{
-                background: theme.palette.primary.main,
+                background: theme.palette.secondary.light,
                 opacity: 0.3,
                 height: "600px",
                 transform: "rotate(5deg)",
