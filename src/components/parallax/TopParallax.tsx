@@ -54,7 +54,10 @@ export function TopParallax() {
     children: (
       <div
         style={{
-          background: theme.palette.primary.main,
+          background:
+            theme.palette.mode === "light"
+              ? theme.palette.primary.light
+              : theme.palette.primary.dark,
           height: "1200px",
           transform: "rotate(5deg)",
           width: "150%",
