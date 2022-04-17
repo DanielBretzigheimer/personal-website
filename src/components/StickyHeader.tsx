@@ -40,7 +40,7 @@ export function StickyHeader(props: StickyHeaderProps) {
       <Paper
         square
         elevation={isSticky ? 4 : 0}
-        sx={(theme) => (isSticky ? {} : { background: theme.palette.background.default })}
+        sx={(theme) => (isSticky ? {} : { background: "transparent" })}
       >
         {props.children}
       </Paper>
