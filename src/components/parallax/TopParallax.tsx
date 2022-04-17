@@ -1,10 +1,16 @@
 import { useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { BannerLayer } from "react-scroll-parallax/dist/components/ParallaxBanner/types";
 
 export function TopParallax() {
   const theme = useTheme();
   const bubbleCount = 30;
+  const [height, setHeight] = useState<number>();
+
+  useEffect(() => {
+    setHeight(document.body.offsetHeight);
+  });
 
   const createRandomValue = (min: number, max: number) => {
     const rnd = Math.random();
@@ -18,6 +24,7 @@ export function TopParallax() {
 
     const size = createRandomValue(60, 120);
     const speed = createRandomValue(20, 100);
+    const scale = createRandomValue(0.5, 4);
     const position = Math.random() > 0.5 ? "left" : "right";
     const color =
       Math.random() > 0.5 && currentIndexValue > 10
@@ -29,6 +36,7 @@ export function TopParallax() {
 
     return {
       speed,
+      scale: [1, scale, "easeInQuad"],
       children: (
         <div
           style={{
@@ -67,10 +75,5 @@ export function TopParallax() {
     ),
   });
 
-  return (
-    <ParallaxBanner
-      layers={layers}
-      style={{ height: "10000px", position: "absolute", zIndex: -1 }}
-    />
-  );
+  return <ParallaxBanner layers={layers} style={{ height, position: "absolute", zIndex: -1 }} />;
 }

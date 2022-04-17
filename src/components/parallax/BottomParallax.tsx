@@ -19,8 +19,8 @@ export function BottomParallax() {
                 opacity: 0.3,
                 height: "600px",
                 transform: "rotate(5deg)",
-                width: "120%",
-                marginLeft: "-10%",
+                width: "150%",
+                marginLeft: "-25%",
                 bottom: 0,
                 position: "absolute",
               }}

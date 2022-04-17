@@ -21,7 +21,7 @@ export function StickyHeader(props: StickyHeaderProps) {
      */
     const observer = new IntersectionObserver(
       ([e]) => {
-        const elementIsOnTop = e.boundingClientRect.top === 0;
+        const elementIsOnTop = e.boundingClientRect.top < 1;
         const elementIsIntersectet = e.intersectionRatio < 1;
         setIsSticky(elementIsOnTop && elementIsIntersectet);
       },
