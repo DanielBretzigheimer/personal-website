@@ -1,5 +1,5 @@
-import { Box, Paper, useTheme } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { Box, Paper } from "@mui/material";
+import { useLayoutEffect, useRef, useState } from "react";
 
 interface StickyHeaderProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export function StickyHeader(props: StickyHeaderProps) {
   const [isSticky, setIsSticky] = useState(false);
   const ref = useRef<HTMLElement>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const cachedRef = ref.current;
     if (!cachedRef) return;
 
@@ -27,7 +27,6 @@ export function StickyHeader(props: StickyHeaderProps) {
       },
       {
         threshold: [1],
-        rootMargin: "-1px 0px 0px 0px",
       }
     );
 
@@ -36,12 +35,8 @@ export function StickyHeader(props: StickyHeaderProps) {
   }, []);
 
   return (
-    <Box position="sticky" zIndex={1} top={0} mt={3} ref={ref}>
-      <Paper
-        square
-        elevation={isSticky ? 4 : 0}
-        sx={(theme) => (isSticky ? {} : { background: "transparent" })}
-      >
+    <Box position="sticky" zIndex={1} top={-1} mt={3} ref={ref}>
+      <Paper square elevation={isSticky ? 4 : 0} sx={isSticky ? {} : { background: "transparent" }}>
         {props.children}
       </Paper>
     </Box>
