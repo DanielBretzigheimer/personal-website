@@ -12,7 +12,7 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": ".*start.*",
-          "endsPattern": ".*dev server running at.*"
+          "endsPattern": ".*VITE.+ready in.*"
         }
       },
       "label": "Start Dev Server",

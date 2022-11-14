@@ -25,7 +25,7 @@ export function TopParallax() {
       children: (
         <>
           {bubbles.map((i) => (
-            <Bubble index={i} />
+            <Bubble key={i} index={i} />
           ))}
         </>
       ),

@@ -1,5 +1,5 @@
-import { Mark, Slider, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { Slider, Typography } from "@mui/material";
+import { ReactNode, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import TimelineItems from "../../../data/TimelineItems";
 import { maxTeamSizeValue } from "../../../model/TimelineItemContent";
@@ -10,7 +10,7 @@ export default function TeamSizeFilter(props: TimelineFilterProps) {
   const maxTeamSize = TimelineItems().reduce((max, i) => Math.max(max, i.teamSize ?? 1), 1);
   const maxSliderValue = Math.min(maxTeamSize, maxTeamSizeValue);
   const [teamSizeFilterValues, setTeamSizeFilterValues] = useState([0, maxSliderValue]);
-  const marks = new Array<Mark>();
+  const marks = new Array<{ value: number; label: ReactNode }>();
 
   useEffect(() => {
     const currentFilter = props.filters.find((f) => f.type === "teamSize");

@@ -6,7 +6,7 @@ export const maxTeamSizeValue = 10;
 export interface TimelineItemContent {
   key: string;
   caption?: string;
-  content?: { [tagName: string]: React.ReactNode };
+  content?: { [tagName: string]: React.ReactElement };
   type: "Education" | "Private" | "Work";
   skills?: Array<Skill>;
   teamSize?: number;

@@ -1,6 +1,5 @@
 import { Box, Card, CardContent, Chip, Tooltip, Typography } from "@mui/material";
 import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi-material-ui";
-import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
 import { TimelineItemContent, maxTeamSizeValue } from "../../model/TimelineItemContent";

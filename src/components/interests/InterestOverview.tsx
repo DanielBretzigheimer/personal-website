@@ -1,9 +1,9 @@
 import { Box, Card, CardContent, Grid, Link, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import CategoryHeader from "../CategoryHeader";
 import HeartIcon from "mdi-material-ui/Heart";
 import MovieIcon from "mdi-material-ui/Movie";
-import GamingIcon from "mdi-material-ui/GoogleController";
+import GamingIcon from "mdi-material-ui/ControllerClassicOutline";
 import ShootingIcon from "mdi-material-ui/Pistol";
 import TravelIcon from "mdi-material-ui/Airplane";
 import MotorbikeIcon from "mdi-material-ui/Motorbike";

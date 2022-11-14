@@ -133,7 +133,7 @@
   "mdx": "MDX",
   "gatsby": "Gatsby",
   "arma-website": "Homepage für einen Gaming Klan",
-  "arma-website-content": "Der ARMA Clan \"Aufklärungsbataillon 178\" hatte mich gefragt, ob es mögliche wäre eine Homepage für sie zu Erstellen. Ohne genau vorgaben der UI, habe ich mich an der offiziellen ARMA Seite ausgerichtet. Da ich bis jetzt noch keine Erfahrung mit Gatsby hatte, aber bereits viel davon hörte, habe ich mich entschieden es in diesem Projekt auszuprobieren. Zusätzlich sollte der Inhalt von Personen geschrieben werden können, die keine Erfahrung in der Softwareentwicklung haben. Deshalb habe ich mich dafür entschieden diesen in MDX Dateien zu verwalten. Die Seite ist <1>hier</1> zu finden. Der Quellcode ist öffentlich und kann <2>hier</2> eingesehen werden.",
+  "arma-website-content": "Der ARMA Clan \"Aufklärungsbataillon 178\" hatte mich gefragt, ob es mögliche wäre eine Homepage für sie zu Erstellen. Ohne genau vorgaben der UI, habe ich mich an der offiziellen ARMA Seite ausgerichtet. Da ich bis jetzt noch keine Erfahrung mit Gatsby hatte, aber bereits viel davon hörte, habe ich mich entschieden es in diesem Projekt auszuprobieren. Zusätzlich sollte der Inhalt von Personen geschrieben werden können, die keine Erfahrung in der Softwareentwicklung haben. Deshalb habe ich mich dafür entschieden diesen in MDX Dateien zu verwalten.",
   "sq-lite": "SQLite",
   "python-hardware-control-application": "Steuerungssoftware für Laboraufbau in der Kontaktlinsenproduktion",
   "python-hardware-control-application-content": "Für die Steuerung mehrerer Laborgeräte habe ich zwei Python Anwendungen entwickelt. Die Anwendungen werden genutzt, um die verschiedenen Teile einer Linse aneinander zu kleben und zur Veränderung der Dioptrie. Die Anwendung beinhaltet Schnittstellen, um verschiedenen Servomotoren, Scanner und Kameras anzusteuern. Zusätzlich bietet sie dem Benutzer die Möglichkeit manuelle Korrekturen anhand der Kameraaufnahmen vorzunehmen. Anschließend werden die aufgenommenen Daten der Scanner in der Anwendung ausgewertet und genutzt, um die Linsenteile für die Verklebung auszurichten.",
@@ -143,5 +143,7 @@
   "react-dashboard-reporting-application-content": "Die Anwendung bietet den Benutzern die Möglichkeit eigene Dashboards und Berichte zu konfigurieren. Je nach Benutzerlevel können vorgefertigte Controls hinzugefügt werden oder eigene Controls angelegt werden. Über eine Freigabeverwaltung können die eigenen Controls mit einer anderen Benutzergruppe geteilt werden. Beim Hinzufügen eines Controls auf dem eigenen Dashboard oder Bericht kann der Benutzer die zugrundeliegenden Daten nach seinen Wünschen eingrenzen.",
   "react-app-framework": "React App Framework",
   "react-app-framework-content": "Ein npm Paket in dem React Komponenten und Hooks ausgelagert werden, die in mehreren anderen Anwendungen benötigt werden.",
-  "oracle": "Oracle"
+  "oracle": "Oracle",
+  "github-svg2pdf": "Github Pull Request für svg2pdf",
+  "github-svg2pdf-content": "Nachdem wir einen Fehler im npm Paket <1>svg2pdf</1> entdeckt hatten und der Maintainer im dazugehörigen <2>Ticket</2> die Unterstützung der Community gefordert hat, habe ich mich dem Problem gewidmet. Nach erfolgreicher Behebung des Problems habe ich einen <3>Pull Request</3> gestellt, um den Fehler auch für andere Nutzer zu beheben."
 }

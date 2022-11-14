@@ -290,7 +290,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "asset-management-application",
-      caption: `12/2020 - 09/2021`,
+      caption: `12/2020 - ${nowString}`,
       type: "Work",
       skills: [
         skillJavaScript,
@@ -328,10 +328,6 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       key: "arma-website",
       caption: `05/2021 - 06/2021`,
       type: "Private",
-      content: {
-        1: <Link href="https://arma-aufklaba178.netlify.app/" />,
-        2: <Link href="https://github.com/DanielBretzigheimer/arma-website" />,
-      },
       skills: [
         skillTypeScript,
         skillReact,
@@ -346,7 +342,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "python-hardware-control-application",
-      caption: `09/2021 - ${nowString}`, // 02/2022
+      caption: `09/2021 - ${nowString}`, // 04/2023
       type: "Work",
       skills: [skillPython, skillVisualStudioCode, skillGit],
       teamSize: 2,
@@ -369,7 +365,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "react-dashboard-reporting-application",
-      caption: `01/2022 - ${nowString}`, // 05/2022
+      caption: `01/2022 - ${nowString}`, // 06/2023
       type: "Work",
       skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillCss],
       teamSize: 2,
@@ -380,6 +376,18 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       type: "Work",
       skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillCss],
       teamSize: 3,
+    },
+    {
+      key: "github-svg2pdf",
+      caption: "08/2022",
+      content: {
+        1: <Link href="https://github.com/yWorks/svg2pdf.js" />,
+        2: <Link href="https://github.com/yWorks/svg2pdf.js/issues/212" />,
+        3: <Link href="https://github.com/yWorks/svg2pdf.js/pull/223" />,
+      },
+      skills: [skillJavaScript, skillTypeScript, skillVisualStudioCode, skillGit],
+      type: "Private",
+      teamSize: 17,
     },
   ];
 }
