@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Link, Typography } from "@mui/material";
+import { Box, CardContent, Grid, Link, Typography } from "@mui/material";
 import { ReactNode } from "react";
 import CategoryHeader from "../CategoryHeader";
 import HeartIcon from "mdi-material-ui/Heart";
@@ -9,6 +9,7 @@ import TravelIcon from "mdi-material-ui/Airplane";
 import MotorbikeIcon from "mdi-material-ui/Motorbike";
 import SwimIcon from "mdi-material-ui/Swim";
 import { Trans, useTranslation } from "react-i18next";
+import { GlassCard } from "../GlassCard";
 
 interface Interest {
   icon: ReactNode;
@@ -49,7 +50,7 @@ export default function InterestOverview() {
       <CategoryHeader>
         <HeartIcon fontSize="large" color="secondary" /> {t("interests")}
       </CategoryHeader>
-      <Card>
+      <GlassCard>
         <CardContent>
           <Typography>
             <Trans
@@ -71,7 +72,7 @@ export default function InterestOverview() {
             </Grid>
           ))}
         </Grid>
-      </Card>
+      </GlassCard>
     </>
   );
 }

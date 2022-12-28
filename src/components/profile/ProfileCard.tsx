@@ -1,18 +1,10 @@
-import {
-  Avatar,
-  Box,
-  Card,
-  CardContent,
-  Divider,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Avatar, Box, CardContent, Typography, useMediaQuery, useTheme } from "@mui/material";
 import ProfilePicture from "../../images/Profile_Picture.jpg";
 import { useTranslation } from "react-i18next";
 import { Biography } from "./Biography";
 import { About } from "./About";
 import ProfileLinks from "./ProfileLinks";
+import { GlassCard } from "../GlassCard";
 
 export default function ProfileCard() {
   const { t } = useTranslation();
@@ -50,14 +42,14 @@ export default function ProfileCard() {
           <ProfileLinks />
         </Box>
       </Box>
-      <Card>
+      <GlassCard>
         <CardContent>
           <About />
         </CardContent>
         <CardContent>
           <Biography />
         </CardContent>
-      </Card>
+      </GlassCard>
     </>
   );
 }

@@ -1,9 +1,10 @@
-import { Box, Card, CardContent, Chip, Tooltip, Typography } from "@mui/material";
+import { Box, CardContent, Chip, Tooltip, Typography } from "@mui/material";
 import { AccountGroupOutline, AccountMultipleOutline, AccountOutline } from "mdi-material-ui";
 import { Trans, useTranslation } from "react-i18next";
 import TimelineFilter from "../../model/TimelineFilter";
 import { TimelineItemContent, maxTeamSizeValue } from "../../model/TimelineItemContent";
 import ChipCollection from "../ChipCollection";
+import { GlassCard } from "../GlassCard";
 import "./TimelineCard.css";
 
 interface TimelineCardProps {
@@ -64,7 +65,7 @@ export default function TimelineCard(props: TimelineCardProps) {
   }
 
   return (
-    <Card id={props.item.key} className="timeline-card">
+    <GlassCard id={props.item.key} className="timeline-card">
       <CardContent>
         <Typography variant="h6">{t(props.item.key)}</Typography>
         <Box display="flex" alignItems="center">
@@ -78,6 +79,6 @@ export default function TimelineCard(props: TimelineCardProps) {
         </Box>
         {getKeywords()}
       </CardContent>
-    </Card>
+    </GlassCard>
   );
 }

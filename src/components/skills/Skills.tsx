@@ -1,8 +1,9 @@
-import { Box, Card, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import SkillData from "../../data/SkillData";
 import Skill from "../../model/Skill";
 import CategoryHeader from "../CategoryHeader";
+import { GlassCard } from "../GlassCard";
 import SkillLine from "./SkillLine";
 import SkillTitle from "./SkillTitle";
 
@@ -17,7 +18,7 @@ export default function Skills(props: SkillsProps) {
   return (
     <Box>
       <CategoryHeader>{t("skills")}</CategoryHeader>
-      <Card>
+      <GlassCard>
         <Box marginTop={2}>
           <Grid container spacing={2}>
             {skillGroups.map((skillGroup, i) => (
@@ -30,7 +31,7 @@ export default function Skills(props: SkillsProps) {
             ))}
           </Grid>
         </Box>
-      </Card>
+      </GlassCard>
     </Box>
   );
 }

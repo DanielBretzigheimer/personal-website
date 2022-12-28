@@ -35,6 +35,9 @@ export default function App() {
               primary: { main: blue[500] },
               secondary: { main: pink[500] },
             },
+        shape: {
+          borderRadius: 25,
+        },
       }),
     [prefersDarkMode]
   );
