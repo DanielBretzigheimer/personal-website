@@ -45,11 +45,11 @@ export default function TimelineCard(props: TimelineCardProps) {
     if (props.item.teamSize) {
       const icon =
         props.item.teamSize === 1 ? (
-          <AccountOutline />
+          <AccountOutline style={{ display: "block" }} />
         ) : props.item.teamSize === 2 ? (
-          <AccountMultipleOutline />
+          <AccountMultipleOutline style={{ display: "block" }} />
         ) : (
-          <AccountGroupOutline />
+          <AccountGroupOutline style={{ display: "block" }} />
         );
 
       const teamSize =
@@ -72,7 +72,7 @@ export default function TimelineCard(props: TimelineCardProps) {
           <Box flexGrow="1">
             <Typography variant="caption">{props.item.caption}</Typography>
           </Box>
-          {getTeamSize()}
+          <Box ml={1}>{getTeamSize()}</Box>
         </Box>
         <Box whiteSpace="pre-line">
           <Trans i18nKey={`${props.item.key}-content`} components={props.item.content} />

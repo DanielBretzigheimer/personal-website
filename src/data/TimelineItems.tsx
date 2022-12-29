@@ -33,6 +33,7 @@ import {
   skillReact,
   skillScss,
   skillSelenium,
+  skillSolidJs,
   skillSql,
   skillSubversion,
   skillTypeScript,
@@ -296,6 +297,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
         skillJavaScript,
         skillTypeScript,
         skillSql,
+        skillAngular,
         skillAngularJs,
         skillMicrosoftSqlServer,
         skillMariaDb,
@@ -388,6 +390,16 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       skills: [skillJavaScript, skillTypeScript, skillVisualStudioCode, skillGit],
       type: "Private",
       teamSize: 17,
+    },
+    {
+      key: "club-homepage",
+      caption: `11/2022 - ${nowString}`,
+      content: {
+        1: <Link href="https://www.sg-eisenbach1958.de/" />,
+      },
+      skills: [skillTypeScript, skillSolidJs, skillVisualStudioCode, skillGit, skillHtml, skillCss],
+      type: "Private",
+      teamSize: 1,
     },
   ];
 }

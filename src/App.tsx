@@ -9,7 +9,6 @@ import {
 import { blue, pink } from "@mui/material/colors";
 import { useMemo } from "react";
 import ProfileCard from "./components/profile/ProfileCard";
-import "./App.css";
 import TimelineOverview from "./components/timeline/TimelineOverview";
 import InterestOverview from "./components/interests/InterestOverview";
 import Certificates from "./components/certificates/Certificates";

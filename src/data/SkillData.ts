@@ -37,10 +37,12 @@ export const skillAspNetCore = {
   value: 100,
   website: "https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core",
 };
-export const skillReact = { name: "react", value: 90, website: "https://reactjs.org/" };
-export const skillVueJs = { name: "vue-js", value: 80, website: "https://vuejs.org/" };
-export const skillAngularJs = { name: "angular-js", value: 70, website: "https://angularjs.org/" };
-export const skillAngular = { name: "angular", value: 30, website: "https://angular.io/" };
+export const skillReact = { name: "react", value: 100, website: "https://reactjs.org/" };
+export const skillVueJs = { name: "vue-js", value: 90, website: "https://vuejs.org/" };
+export const skillIonic = { name: "ionic", value: 70, website: "https://ionicframework.com/" };
+export const skillAngularJs = { name: "angular-js", value: 60, website: "https://angularjs.org/" };
+export const skillAngular = { name: "angular", value: 60, website: "https://angular.io/" };
+export const skillSolidJs = { name: "solid-js", value: 50, website: "https://www.solidjs.com/" };
 export const skillGatsby = { name: "gatsby", value: 30, website: "https://www.gatsbyjs.com/" };
 
 // databases
@@ -183,7 +185,15 @@ export default function (): Array<SkillGroup> {
     },
     {
       name: "frameworks",
-      skills: [skillNetCore, skillAspNetCore, skillReact, skillVueJs, skillAngularJs, skillAngular],
+      skills: [
+        skillNetCore,
+        skillAspNetCore,
+        skillReact,
+        skillVueJs,
+        skillAngularJs,
+        skillAngular,
+        skillSolidJs,
+      ],
     },
     {
       name: "databases",

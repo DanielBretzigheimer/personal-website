@@ -145,5 +145,9 @@
   "react-app-framework-content": "Ein npm Paket in dem React Komponenten und Hooks ausgelagert werden, die in mehreren anderen Anwendungen benötigt werden.",
   "oracle": "Oracle",
   "github-svg2pdf": "Github Pull Request für svg2pdf",
-  "github-svg2pdf-content": "Nachdem wir einen Fehler im npm Paket <1>svg2pdf</1> entdeckt hatten und der Maintainer im dazugehörigen <2>Ticket</2> die Unterstützung der Community gefordert hat, habe ich mich dem Problem gewidmet. Nach erfolgreicher Behebung des Problems habe ich einen <3>Pull Request</3> gestellt, um den Fehler auch für andere Nutzer zu beheben."
+  "github-svg2pdf-content": "Nachdem wir einen Fehler im npm Paket <1>svg2pdf</1> entdeckt hatten und der Maintainer im dazugehörigen <2>Ticket</2> die Unterstützung der Community gefordert hat, habe ich mich dem Problem gewidmet. Nach erfolgreicher Behebung des Problems habe ich einen <3>Pull Request</3> gestellt, um den Fehler auch für andere Nutzer zu beheben.",
+  "solid-js": "SolidJS",
+  "ionic": "Ionic",
+  "club-homepage": "Vereinswebsite",
+  "club-homepage-content": "Im November 2022 habe ich entschieden die <1>Vereinswebsite</1> unseres Schützenvereins neu zu erstellen. Als Framework habe ich SolidJS für das Frontend gewählt."
 }

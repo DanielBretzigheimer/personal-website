@@ -14,3 +14,19 @@ code {
 * {
   hyphens: auto;
 }
+
+html {
+  color-scheme: light dark;
+}
+
+@keyframes pulsate {
+  0% {
+    filter: contrast(1);
+  }
+  50% {
+    filter: contrast(0.7);
+  }
+  100% {
+    filter: contrast(1);
+  }
+}
