@@ -33,6 +33,7 @@ export default function ProfileCard() {
         />
         <Box
           className="profile-name"
+          color="white"
           sx={isMobile ? { marginLeft: theme.spacing(2) } : { textAlign: "center" }}
         >
           <Typography sx={{ hyphens: "manual" }} variant="h4">
