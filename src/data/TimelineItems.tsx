@@ -291,7 +291,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "asset-management-application",
-      caption: `12/2020 - ${nowString}`,
+      caption: `12/2020 - 12/2022`,
       type: "Work",
       skills: [
         skillJavaScript,
@@ -344,7 +344,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "python-hardware-control-application",
-      caption: `09/2021 - ${nowString}`, // 04/2023
+      caption: `09/2021 - ${nowString}`, // 06/2023
       type: "Work",
       skills: [skillPython, skillVisualStudioCode, skillGit],
       teamSize: 2,
@@ -367,7 +367,7 @@ export default function TimelineItems(): Array<TimelineItemContent> {
     },
     {
       key: "react-dashboard-reporting-application",
-      caption: `01/2022 - ${nowString}`, // 06/2023
+      caption: `01/2022 - ${nowString}`, // 09/2023
       type: "Work",
       skills: [skillTypeScript, skillReact, skillVisualStudioCode, skillGit, skillHtml, skillCss],
       teamSize: 2,
@@ -400,6 +400,11 @@ export default function TimelineItems(): Array<TimelineItemContent> {
       skills: [skillTypeScript, skillSolidJs, skillVisualStudioCode, skillGit, skillHtml, skillCss],
       type: "Private",
       teamSize: 1,
+    },
+    {
+      key: "instructor-exam",
+      caption: "01/2023",
+      type: "Education",
     },
   ];
 }
