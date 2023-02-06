@@ -16,6 +16,7 @@ import AppFooter from "./components/footer/AppFooter";
 import { TopParallax } from "./components/parallax/TopParallax";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { BottomParallax } from "./components/parallax/BottomParallax";
+import ProjectOverview from "./components/projects/ProjectOverview";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -49,6 +50,7 @@ export default function App() {
           <TopParallax />
           <Container sx={{ padding: 1 }}>
             <ProfileCard />
+            <ProjectOverview />
             <TimelineOverview />
             <Certificates />
             <InterestOverview />

@@ -151,5 +151,6 @@
   "club-homepage": "Vereinswebsite",
   "club-homepage-content": "Im November 2022 habe ich entschieden die <1>Vereinswebsite</1> unseres Schützenvereins neu zu erstellen. Als Framework habe ich SolidJS für das Frontend gewählt.",
   "instructor-exam": "Fortbildung zum Ausbilder",
-  "instructor-exam-content": "Im Januar 2023 habe ich erfolgreich die Fortbildungsprüfung zum Ausbilder bestanden."
+  "instructor-exam-content": "Im Januar 2023 habe ich erfolgreich die Fortbildungsprüfung zum Ausbilder bestanden.",
+  "projects": "Projekte"
 }

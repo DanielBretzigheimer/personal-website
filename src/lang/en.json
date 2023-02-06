@@ -152,5 +152,6 @@
   "club-homepage": "Club Homepage",
   "club-homepage-content": "In November 2022 I created a new <1>homepage</1> for my shooting club. As a frontend framework I chose SolidJS.",
   "instructor-exam": "Instructor Training",
-  "instructor-exam-content": "In January 2023, I successfully passed the exam to become an Instructor."
+  "instructor-exam-content": "In January 2023, I successfully passed the exam to become an Instructor.",
+  "projects": "Projects"
 }
