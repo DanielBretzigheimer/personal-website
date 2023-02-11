@@ -17,6 +17,7 @@ import { TopParallax } from "./components/parallax/TopParallax";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { BottomParallax } from "./components/parallax/BottomParallax";
 import ProjectOverview from "./components/projects/ProjectOverview";
+import { GoUpButton } from "./components/GoUpButton";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -57,6 +58,7 @@ export default function App() {
             <AppFooter />
           </Container>
           <BottomParallax />
+          <GoUpButton />
         </ThemeProvider>
       </ParallaxProvider>
     </StyledEngineProvider>

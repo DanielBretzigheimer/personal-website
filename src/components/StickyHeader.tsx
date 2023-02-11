@@ -2,6 +2,7 @@ import { Box, Paper } from "@mui/material";
 import { useLayoutEffect, useRef, useState } from "react";
 
 interface StickyHeaderProps {
+  id?: string;
   children: React.ReactNode;
 }
 
@@ -35,7 +36,14 @@ export function StickyHeader(props: StickyHeaderProps) {
   }, []);
 
   return (
-    <Box position="sticky" zIndex={1} top={-1} mt={3} ref={ref}>
+    <Box
+      id={props.id}
+      position={isSticky ? "sticky" : "relative"}
+      zIndex={1}
+      top={-1}
+      mt={3}
+      ref={ref}
+    >
       <Paper square elevation={isSticky ? 4 : 0} sx={isSticky ? {} : { background: "transparent" }}>
         {props.children}
       </Paper>

@@ -1,8 +1,10 @@
-import { Box } from "@mui/material";
+import { ButtonBase } from "@mui/material";
+import { MouseEventHandler } from "react";
 import "./BigProjectCard.css";
 
 type BigProjectCardProps = {
   index: number;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
 };
 
@@ -12,7 +14,8 @@ export function BigProjectCard(props: BigProjectCardProps) {
   const rotation = 1 - props.index * Math.random() * 5;
 
   return (
-    <Box
+    <ButtonBase
+      onClick={props.onClick}
       className="big-card"
       sx={{
         zIndex: 10 - props.index,
@@ -20,6 +23,6 @@ export function BigProjectCard(props: BigProjectCardProps) {
       }}
     >
       {props.children}
-    </Box>
+    </ButtonBase>
   );
 }

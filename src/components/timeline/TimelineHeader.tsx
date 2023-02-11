@@ -40,7 +40,7 @@ export default function TimelineFilterHeader(props: TimelineHeaderProps) {
 
   return (
     <>
-      <StickyHeader>
+      <StickyHeader id="curriculum-vitae-header">
         <Box display="flex" alignItems="baseline">
           <Box flexGrow={1}>
             <CategoryHeader>{t("curriculum-vitae")}</CategoryHeader>
